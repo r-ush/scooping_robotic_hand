@@ -9,7 +9,6 @@ plugins:
 # Exclude from processing
 exclude:
   - "*.txt"
-  - "*.mp4"
   - Gemfile
   - Gemfile.lock
   - node_modules
