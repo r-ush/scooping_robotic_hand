@@ -192,6 +192,18 @@
             <video id="scooping-main" controls muted playsinline height="100%">
               <source src="./static/videos/scooping_main.mp4" type="video/mp4">
             </video>
+            <script>
+              document.addEventListener("DOMContentLoaded", function() {
+                setTimeout(function() {
+                  var mainVideo = document.getElementById("scooping-main");
+                  if (mainVideo) {
+                    mainVideo.play().catch(function(e) {
+                      console.log("Autoplay prevented:", e);
+                    });
+                  }
+                }, 3000);
+              });
+            </script>
             <h2 class="subtitle has-text-centered is-size-6">
               <span class="dnerf">Scooping Grasping</span>
               — fingertip force enables adaptive contact and natural lift-off from the floor.
