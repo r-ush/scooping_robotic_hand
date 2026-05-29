@@ -2,7 +2,7 @@
 
 Research page for **scooping grasping motion** using fingertip force sensing on the AIDIN Robotics hand.
 
-**Authors:** Seunghwan Um, Tae Hyun Bae  
+**Contributors:** Seunghwan Um, Tae Hyun Bae  
 **Affiliation:** Sungkyunkwan University
 
 ## Overview
