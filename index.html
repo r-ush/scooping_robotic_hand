@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Scooping Grasping with Robotic Hand using fingertip force sensing. Research by Seunghwan Um at Sungkyunkwan University.">
+  <meta name="keywords" content="Robotic Hand, Scooping, Grasping, Force Control, AIDIN Robotics, Teleoperation, Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <noscript>
+    This page demonstrates scooping grasping motion with a robotic hand using fingertip force sensing. Please enable JavaScript to see the visualization.
+  </noscript>
+  <title>[RUSH] Scooping Grasping with Robotic Hand</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- MathJax for equation rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        tags: 'none'
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://r-ush.github.io/">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://r-ush.github.io/m0609_impedance_control/">
+              M0609 Impedance Control
+            </a>
+            <a class="navbar-item" href="https://r-ush.github.io/rb10_admittance_control/">
+              RB10 Admittance Control
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Scooping Grasping with Robotic Hand</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://r-ush.github.io/">Seunghwan Um</a>,</span>
+              <span class="author-block">
+                <a href="">Tae Hyun Bae</a></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Sungkyunkwan University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/r-ush" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (TBD)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Abstract -->
+  <section class="section" style="padding: 1.5rem 1.5rem 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              A robotic hand performing a <strong>scooping grasping motion</strong> — something you probably haven't seen often.
+            </p>
+            <p>
+              When humans pick up an object from the floor, we naturally use a scooping motion to lift and grasp it.
+              However, controlling this motion is extremely challenging for grippers or robotic hands with <strong>rigid fingertips</strong>.
+              Even with direct human teleoperation, managing contact with the environment remains difficult.
+            </p>
+            <p>
+              While using soft fingertips is an alternative, it inevitably comes with a trade-off: a loss of grasping force and positional accuracy.
+            </p>
+            <p>
+              💡 Our research team has solved this problem using <strong>fingertip sensors attached to the AIDIN Robotics hand</strong>.
+              By utilizing the external forces generated when the finger makes contact with the environment,
+              we successfully achieved a seamless scooping grasping motion.
+            </p>
+            <p>
+              Through this approach, the kinematic joints of the finger avoid forming a closed-loop chain with the environment upon contact,
+              enabling <strong>safe interaction against external constraints</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Abstract -->
+
+
+  <!-- Main Demo Video -->
+  <section class="section" style="padding: 1.0rem 1.0rem 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <h2 class="title is-3">Main Demo</h2>
+        <p class="is-size-5">
+          Scooping grasping motion achieved via fingertip force sensing on AIDIN Robotics hand.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body" style="padding: 0.5rem 1.5rem 1.0rem;">
+        <div class="columns is-centered">
+          <div class="column">
+            <video id="scooping-main" controls muted playsinline height="100%">
+              <source src="./static/videos/scooping_main.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered is-size-6">
+              <span class="dnerf">Scooping Grasping</span>
+              — fingertip force enables safe contact and natural lift-off from the floor.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Side-by-Side Comparison toggle (open by default) -->
+  <section class="section" style="padding: 0.5rem 1.5rem 0.5rem;">
+    <div class="container is-max-desktop">
+      <details id="demo-toggle" open>
+        <summary id="demo-summary">
+          <span class="principle-label">Demo</span>
+          <span class="principle-icon"><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        <div class="principle-content" style="padding: 0 0.2rem 0.8rem;">
+          <div class="hero-body" style="padding: 0.8rem 0 0.5rem;">
+            <div class="columns is-centered">
+              <div class="column">
+                <video id="comparison2-main" controls muted playsinline height="100%">
+                  <source src="./static/videos/comparison_w_wo_impedance.mp4" type="video/mp4">
+                </video>
+                <h2 class="subtitle has-text-centered is-size-6">
+                  <span class="dnerf">Side-by-Side Comparison</span>
+                  — full comparison video showing the effect of impedance control during scooping.
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <hr class="divider" style="margin: 0.5rem auto; max-width: 800px; border: 0; height: 0.5px; background-color: #dbdbdb;">
+
+  <!-- Principle Toggle -->
+  <section class="section" style="padding: 1.0rem 1.5rem 2.0rem;">
+    <div class="container" style="max-width: 1100px;">
+      <details id="principle-toggle">
+        <summary id="principle-summary">
+          <span class="principle-label">Principle</span>
+          <span class="principle-icon"><i class="fas fa-chevron-down"></i></span>
+        </summary>
+
+        <div class="principle-content">
+
+          <!-- Fingertip Force Transformation: YouTube videos -->
+          <div class="content has-text-centered" style="margin-top: 2rem;">
+            <h2 class="title is-3">Fingertip Force Transformation</h2>
+            <p class="is-size-5">
+              Fingertip force-torque signals are transformed to the wrist frame and combined
+              with the wrist F/T sensor for compliant impedance control of the manipulator.
+            </p>
+          </div>
+
+          <div class="columns is-centered" style="margin-top: 1rem;">
+            <!-- Left: YouTube Shorts -->
+            <div class="column">
+              <div class="publication-video">
+                <iframe
+                  src="https://www.youtube.com/embed/eXF3unYd2I0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <h2 class="subtitle has-text-centered is-size-6" style="margin-top: 0.6rem;">
+                <span class="dnerf">Fingertip Contact Force</span>
+                — external forces during scooping, measured at each fingertip.
+              </h2>
+            </div>
+            <!-- Right: YouTube wide -->
+            <div class="column">
+              <div class="publication-video">
+                <iframe
+                  src="https://www.youtube.com/embed/Jit1Lt0djpE"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <h2 class="subtitle has-text-centered is-size-6" style="margin-top: 0.6rem;">
+                <span class="dnerf">Wrist-Level Compliance Control</span>
+                — aggregated wrench drives the manipulator's impedance controller.
+              </h2>
+            </div>
+          </div>
+
+          <!-- Math: Force Aggregation -->
+          <div class="math-block">
+            <h3 class="math-title">Wrench Aggregation to Wrist Frame</h3>
+            <p class="math-desc">
+              Each fingertip wrench \(\mathbf{w}_i = (\mathbf{f}_i,\, \boldsymbol{\tau}_i)\) measured in the fingertip frame
+              is transformed to the wrist frame \(\{W\}\) via the kinematic transform \({}^W T_i\).
+              The rotation matrix \(\mathbf{R}_i\) and position offset \(\mathbf{r}_i\) are obtained from TF.
+            </p>
+
+            <div class="math-eq">
+              \[
+                \mathbf{f}_i^W = \mathbf{R}_i \, \mathbf{f}_i
+              \]
+            </div>
+            <div class="math-eq">
+              \[
+                \boldsymbol{\tau}_i^W = \mathbf{R}_i \, \boldsymbol{\tau}_i + \mathbf{r}_i \times \mathbf{f}_i^W
+              \]
+            </div>
+
+            <p class="math-desc" style="margin-top: 0.8rem;">
+              The aggregated wrench at the wrist combines all \(N\) fingertip contributions and
+              is merged with the physical wrist F/T reading \((\mathbf{f}_\text{wrist},\,\boldsymbol{\tau}_\text{wrist})\):
+            </p>
+
+            <div class="math-eq">
+              \[
+                \mathbf{f}_\text{total} = \mathbf{f}_\text{wrist} + \sum_{i=1}^{N} \mathbf{f}_i^W, \qquad
+                \boldsymbol{\tau}_\text{total} = \boldsymbol{\tau}_\text{wrist} + \sum_{i=1}^{N} \boldsymbol{\tau}_i^W
+              \]
+            </div>
+
+            <p class="math-desc" style="margin-top: 0.8rem;">
+              This combined wrench \((\mathbf{f}_\text{total},\, \boldsymbol{\tau}_\text{total})\)
+              is fed as the external force input to the impedance controller,
+              enabling the manipulator to react compliantly to both wrist-level and fingertip-level contacts
+              during the scooping grasping motion.
+            </p>
+          </div>
+
+          <!-- Restore fingertip force transformation mp4 -->
+          <div class="hero-body" style="padding: 0.5rem 0 0.5rem;">
+            <div class="columns is-centered">
+              <div class="column">
+                <video id="fingertip-force" controls muted playsinline height="100%">
+                  <source src="./static/videos/fingertip_force_transformation.mp4" type="video/mp4">
+                </video>
+                <h2 class="subtitle has-text-centered is-size-6">
+                  <span class="dnerf">Fingertip Force Transformation</span>
+                  — the fingertip F/T signal transformed and aggregated to the wrist frame for compliance control.
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <hr class="divider" style="margin: 1.5rem auto; border: 0; height: 0.5px; background-color: #dbdbdb;">
+
+          <!-- Comparison w/ vs w/o Aggregator -->
+          <div class="content has-text-centered" style="margin-top: 1.5rem;">
+            <h2 class="title is-3">Comparison: w/ vs. w/o Wrist Wrench Aggregator</h2>
+            <p class="is-size-5">
+              Without the aggregator, fingertip contact forces are not propagated to the wrist-level controller,
+              so the manipulator cannot react sensitively to floor contact.
+              With the aggregator, the combined fingertip wrench enables immediate compliant response.
+            </p>
+            <p class="is-size-5" style="margin-top: 0.4rem;">
+              <strong>Click on any video to play both simultaneously.</strong>
+            </p>
+          </div>
+
+          <section class="hero teaser">
+            <div class="hero-body" style="padding: 0.5rem 0 1.5rem;">
+              <div class="columns is-centered">
+                <div class="column">
+                  <video id="comparison1-without" muted playsinline height="100%">
+                    <source src="./static/videos/comparison1_without_impedance.mp4" type="video/mp4">
+                  </video>
+                  <h2 class="subtitle has-text-centered is-size-6">
+                    <span class="dnerf">Without Aggregator</span>
+                    — fingertip forces are not reflected to the wrist; the hand cannot react to contact sensitively.
+                  </h2>
+                </div>
+                <div class="column">
+                  <video id="comparison1-with" muted playsinline height="100%">
+                    <source src="./static/videos/comparison1_with_impedance.mp4" type="video/mp4">
+                  </video>
+                  <h2 class="subtitle has-text-centered is-size-6">
+                    <span class="dnerf">With Aggregator</span>
+                    — aggregated fingertip wrench at the wrist enables sensitive, compliant scooping from the floor.
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /principle-content -->
+      </details>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://github.com/r-ush" class="external-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

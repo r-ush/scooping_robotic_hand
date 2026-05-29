@@ -1,0 +1,19 @@
+title: "Scooping Grasping with Robotic Hand"
+description: "Research page for scooping grasping motion using fingertip force sensing on AIDIN Robotics hand. By Seunghwan Um at Sungkyunkwan University."
+
+# Build settings
+theme: null
+plugins:
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - "*.txt"
+  - "*.mp4"
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+# GitHub Pages settings
+baseurl: "/scooping_robotic_hand"
+url: "https://r-ush.github.io"
