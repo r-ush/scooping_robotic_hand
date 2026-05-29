@@ -1,0 +1,12 @@
+# Reference code (will be added later when ready)
+reference code/
+
+# macOS
+.DS_Store
+.DS_store
+._Icon
+**/.DS_Store
+
+# Editor
+.vscode/
+.idea/

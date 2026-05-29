@@ -1,0 +1,46 @@
+많이 못보셨을 겁니다. scooping grasping motion을 하는 robotic hand.
+
+사람은 바닥에 놓인 물체를 잡을 때 자연스럽게 scooping 하는 motion을 통해 물체를 들어올리고, grasping 합니다.
+
+하지만, 단단한 fingertip을 가진 gripper나 robotic hand 들은 이러한 motion을 control 하기에 매우 어렵고,
+사람이 직접 teleoperation 한다고 하더라도, 환경과의 contact은 매우 어렵게 느껴집니다.
+
+이를 위해 soft한 fingertip을 가질수도 있지만, grasping force나 위치 정밀도가 떨어진다는 trade-off 관계가 필연적입니다.
+
+
+
+우리 연구팀에서는 AIDIN robotics의 hand에 부착된 fingertip sensor를 사용하여 이러한 문제를 해결했고,
+손가락이 환경과 접촉할 때 발생하는 외력을 통해 scooping grasping motion을 구현하였습니다.
+
+
+이를 통해 접촉시 손가락 기구 관절은 환경과 closed loop chain을 갖지 않을 수 있게 되었고, 외부 constraint에 안전하게 contact 할 수 있게 됩니다.
+
+
+자세한 내용은 추후 아래의 홈페이지에 업로드 될 예정이며, 많은 관심 부탁드립니다.
+
+
+
+
+A robotic hand performing a 'scooping grasping motion.' You probably haven’t seen this often
+
+When humans pick up an object from the floor, we naturally use a scooping motion to lift and grasp it. However, controlling this motion is extremely challenging for grippers or robotic hands with rigid fingertips. Even with direct human teleoperation, managing contact with the environment remains difficult.
+
+While using soft fingertips is an alternative, it inevitably comes with a trade-off: a loss of grasping force and positional accuracy.
+
+💡 Our research team has solved this problem using fingertip sensors attached to the AIDIN Robotics hand. By utilizing the external forces generated when the finger makes contact with the environment, we successfully achieved a seamless scooping grasping motion.
+
+Through this approach, the kinematic joints of the finger avoid forming a closed-loop chain with the environment upon contact, enabling safe interaction against external constraints.
+
+More details will be uploaded to the website below soon. Stay tuned! 🚀
+
+🔗 [홈페이지 링크 삽입]
+
+#Robotics #RoboticHand #Manipulation #Grasping #Teleoperation #AIDINRobotics #ForceControl #RoboticsResearch
+
+
+
+
+
+fingertip 에서 측정되는 force torque 값을 활용하여, manipulator를 compliance control 을 진행했습니다.
+
+
