@@ -5,10 +5,10 @@ description: "Research page for scooping grasping motion using fingertip force s
 theme: null
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 # Exclude from processing
 exclude:
-  - "*.txt"
   - Gemfile
   - Gemfile.lock
   - node_modules

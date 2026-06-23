@@ -1,0 +1,25 @@
+# Scooping Grasping with Robotic Hand
+
+> A research project by Seunghwan Um, Tae Hyun Bae, and Prof. Hyouk Ryeol Choi at Sungkyunkwan University.
+
+## Overview
+
+This project demonstrates a robotic hand performing a scooping grasping motion — picking up objects from the floor using a natural scooping lift-off.
+
+Controlling scooping motion is extremely challenging for robotic hands with rigid fingertips, because contact with the environment creates constrained (closed-loop) kinematic chains that can damage the system. Soft fingertips trade off grasping force and positional accuracy.
+
+## Key Contribution
+
+Using fingertip force-torque sensors attached to an AIDIN Robotics hand, we solved this problem without soft fingertips:
+
+1. **Fingertip Force Transformation**: Each fingertip wrench is measured and transformed to the wrist frame via the kinematic chain.
+2. **Wrist Wrench Aggregation**: All fingertip wrenches are aggregated and combined with the physical wrist F/T sensor reading.
+3. **Compliance Control**: The combined wrench feeds into an impedance controller, enabling the manipulator to react compliantly to both wrist-level and fingertip-level contacts during scooping.
+
+This approach avoids closed-loop chains upon contact, enabling safe interaction against external constraints.
+
+## Links
+
+- Project page: https://r-ush.github.io/scooping_robotic_hand/
+- Author homepage: https://r-ush.github.io
+- Author Google Scholar: https://scholar.google.com/citations?user=fPPS03MAAAAJ

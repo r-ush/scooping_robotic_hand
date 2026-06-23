@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://r-ush.github.io/scooping_robotic_hand/sitemap.xml
