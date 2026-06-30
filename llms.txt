@@ -1,6 +1,6 @@
 # Scooping Grasping with Robotic Hand
 
-> A research project by Seunghwan Um, Tae Hyun Bae, and Prof. Hyouk Ryeol Choi at Sungkyunkwan University.
+> A research project by Seunghwan Um (엄승환 / rush / r-ush), Tae Hyun Bae, and Prof. Hyouk Ryeol Choi at Sungkyunkwan University.
 
 ## Overview
 
