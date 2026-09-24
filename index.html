@@ -68,11 +68,13 @@
 <script defer="" src="./static/js/fontawesome.all.min.js"></script>
 
 
-<script defer="" src="./static/js/index.js?v=20260924-final"></script>
+<script defer="" src="./static/js/index.js?v=20260924-math-fix"></script>
 <!-- MathJax for equation rendering -->
 <script>
     window.MathJax = {
+      loader: { load: ['[tex]/boldsymbol'] },
       tex: {
+        packages: { '[+]': ['boldsymbol'] },
         inlineMath: [['\\(', '\\)']],
         displayMath: [['\\[', '\\]']],
         tags: 'none'
@@ -80,7 +82,7 @@
       options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
     };
   </script>
-<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 </head>
 <body>
 <nav aria-label="main navigation" class="navbar" role="navigation">
@@ -284,8 +286,10 @@
               \((\mathbf{f}_\text{wrist},\,\boldsymbol{\tau}_\text{wrist})\):</span><span data-language="ko" hidden="" lang="ko">총 \(N\)개 손끝의 기여분을 손목 좌표계에서 합산한 뒤, 실제 손목 F/T 센서 측정값 \((\mathbf{f}_\text{wrist},\,\boldsymbol{\tau}_\text{wrist})\)에 더합니다.</span></p>
 <div class="math-eq">
               \[
-              \mathbf{f}_\text{total} = \mathbf{f}_\text{wrist} + \sum_{i=1}^{N} \mathbf{f}_i^W, \qquad
-              \boldsymbol{\tau}_\text{total} = \boldsymbol{\tau}_\text{wrist} + \sum_{i=1}^{N} \boldsymbol{\tau}_i^W
+              \begin{aligned}
+              \mathbf{f}_\text{total} &= \mathbf{f}_\text{wrist} + \sum_{i=1}^{N} \mathbf{f}_i^W, \\
+              \boldsymbol{\tau}_\text{total} &= \boldsymbol{\tau}_\text{wrist} + \sum_{i=1}^{N} \boldsymbol{\tau}_i^W
+              \end{aligned}
               \]
             </div>
 <p class="math-desc" style="margin-top: 0.8rem;"><span data-language="en" lang="en">This combined wrench \((\mathbf{f}_\text{total},\, \boldsymbol{\tau}_\text{total})\)

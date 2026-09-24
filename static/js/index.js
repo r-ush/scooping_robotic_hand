@@ -16,9 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (remember) {
       try { localStorage.setItem('scooping-language', language); } catch (_) {}
     }
-    if (window.MathJax && window.MathJax.typesetPromise) {
-      window.MathJax.typesetPromise().catch(function () {});
-    }
+    // Both translations are static DOM nodes, typeset once at MathJax startup.
+    // Language changes only toggle visibility; another typeset can race startup.
     schedulePlayback();
   }
   languageButtons.forEach(function (button) {
