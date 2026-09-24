@@ -27,4 +27,4 @@ The media history was compacted to retain only the current web videos. Previous 
 
 Website template borrowed from [NeRFies](https://github.com/nerfies/nerfies.github.io).
 
-Typography uses self-hosted Pretendard Variable 1.3.9 with a shared English/Korean type scale. The font license is included in static/fonts/Pretendard-LICENSE.txt.
+Korean typography uses self-hosted Pretendard Variable 1.3.9. English retains the original Google Sans and Noto Sans styles. The font license is included in static/fonts/Pretendard-LICENSE.txt.
