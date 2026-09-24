@@ -29,6 +29,15 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
+    // Stop hidden local videos when a section is collapsed.
+    document.querySelectorAll('.research-toggle').forEach(function(toggle) {
+        toggle.addEventListener('toggle', function() {
+            if (!toggle.open) {
+                toggle.querySelectorAll('video').forEach(function(video) { video.pause(); });
+            }
+        });
+    });
+
     // Synchronize video pairs
     function syncVideos(withId, withoutId) {
         var withVideo = document.getElementById(withId);

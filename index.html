@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="엄승환(Seunghwan Um / rush) — 손가락 끝 힘/토크 센서를 이용한 로봇 손의 스쿠핑 파지(Scooping Grasping) 연구. 성균관대학교. Scooping grasping with robotic hand using fingertip force sensing.">
+    content="Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness.">
   <meta name="keywords"
-    content="스쿠핑 파지, 로봇 손, 손가락 힘 센서, 순응 제어, 임피던스 제어, 엄승환, 성균관대, rush, Scooping Grasping, Robotic Hand, Fingertip Force Sensing, Impedance Control, Seunghwan Um, AIDIN Robotics, r-ush">
+    content="스쿠핑 파지, 로봇 손, 손가락 힘 센서, 순응 제어, 임피던스 제어, 엄승환, 성균관대, rush, Scooping Grasping, Robotic Hand, Fingertip Force Sensing, Diffusion Policy, Rollout, Data Collection, Impedance Control, Seunghwan Um, AIDIN Robotics, r-ush">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="google46985f01587fa3e1">
@@ -16,24 +16,24 @@
 
   <link rel="canonical" href="https://r-ush.github.io/scooping_robotic_hand/">
 
-  <meta property="og:title" content="스쿠핑 파지 로봇 손 | 엄승환 (Seunghwan Um / rush)">
-  <meta property="og:description" content="손가락 끝 힘/토크 센서를 활용한 로봇 손의 스쿠핑 파지 연구. 엄승환(rush), 성균관대학교 로보틱스이노베이터리.">
+  <meta property="og:title" content="Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts) | Seunghwan Um">
+  <meta property="og:description" content="Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://r-ush.github.io/scooping_robotic_hand/">
   <meta property="og:image" content="https://r-ush.github.io/images/HandGrasp.png">
   <meta property="og:site_name" content="Seunghwan Um">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Scooping Grasping with Robotic Hand | Seunghwan Um">
-  <meta name="twitter:description" content="Robotic hand performing scooping grasping motion using fingertip force sensing on AIDIN Robotics hand for compliant contact with the environment.">
+  <meta name="twitter:title" content="Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts) | Seunghwan Um">
+  <meta name="twitter:description" content="Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness.">
   <meta name="twitter:image" content="https://r-ush.github.io/images/HandGrasp.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "Scooping Grasping with Robotic Hand",
-    "description": "A robotic hand performing scooping grasping motion using fingertip force-torque sensors on an AIDIN Robotics hand. Fingertip wrenches are transformed and aggregated to the wrist frame for compliance control, enabling safe interaction with the environment during scooping without soft fingertips.",
+    "headline": "Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts)",
+    "description": "Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness.",
     "author": [
       {"@type": "Person", "name": "Seunghwan Um", "alternateName": ["엄승환", "rush", "r-ush"], "url": "https://r-ush.github.io"},
       {"@type": "Person", "name": "Tae Hyun Bae"},
@@ -53,7 +53,7 @@
     This page demonstrates scooping grasping motion with a robotic hand using fingertip force sensing. Please enable
     JavaScript to see the visualization.
   </noscript>
-  <title>Scooping Grasping with Robotic Hand | Seunghwan Um</title>
+  <title>Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts) | Seunghwan Um</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -140,7 +140,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Scooping Grasping with Robotic Hand</h1>
+            <h1 class="title is-1 publication-title">Scooping Grasping with Robotic Hand <span class="publication-subtitle">(with Diffusion Policy Rollouts)</span></h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://r-ush.github.io/">Seunghwan Um</a>,</span>
@@ -184,29 +184,18 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              A robotic hand performing a <strong>scooping grasping motion</strong> — something you probably haven't
-              seen often.
+              Scooping lets a robotic hand lift and grasp objects through contact with the supporting surface.
+              This page presents <strong>diffusion policy rollouts</strong> and the <strong>data collection</strong>
+              demonstrations used to study this motion with an AIDIN Robotics hand.
             </p>
             <p>
-              When humans pick up an object from the floor, we naturally use a scooping motion to lift and grasp it.
-              However, controlling this motion is extremely challenging for grippers or robotic hands with <strong>rigid
-                fingertips</strong>.
-              Even with direct human teleoperation, managing contact with the environment remains difficult.
+              Contact is challenging for robotic hands with rigid fingertips. Fingertip force sensing supports
+              compliant interaction during scooping, as illustrated in the principle and comparison videos below.
             </p>
             <p>
-              While using soft fingertips is an alternative, it inevitably comes with a trade-off: a loss of grasping
-              force and positional accuracy.
-            </p>
-            <p>
-              💡 Our research team has solved this problem using <strong>fingertip sensors attached to the AIDIN
-                Robotics hand</strong>.
-              By utilizing the external forces generated when the finger makes contact with the environment,
-              we successfully achieved a seamless scooping grasping motion.
-            </p>
-            <p>
-              Through this approach, the kinematic joints of the finger avoid forming a closed-loop chain with the
-              environment upon contact,
-              enabling <strong>safe interaction against external constraints</strong>.
+              As an additional technique, we compensate for the hand's <strong>low mechanical stiffness</strong>
+              by transforming fingertip sensor forces into the wrist frame and adding them to wrist force feedback
+              for the manipulator's compliance controller.
             </p>
           </div>
         </div>
@@ -216,114 +205,119 @@
   <!-- /Abstract -->
 
 
-  <!-- Main Demo Video -->
-  <section class="section" style="padding: 1.0rem 1.0rem 0.5rem;">
+  <!-- Diffusion policy rollout -->
+  <section id="main-demo" class="section research-section">
     <div class="container is-max-desktop">
       <div class="content has-text-centered">
         <h2 class="title is-3">Main Demo</h2>
-        <p class="is-size-5">
-          Scooping grasping motion achieved via fingertip force sensing on AIDIN Robotics hand.
-        </p>
+        <p class="is-size-5">Scooping grasping with a robotic hand using a diffusion policy.</p>
+        <p class="preview-note">Preview footage &middot; Final edit coming soon</p>
       </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body" style="padding: 0.5rem 1.5rem 1.0rem;">
-        <div class="columns is-centered">
-          <div class="column">
-            <video id="scooping-main" controls muted playsinline height="100%">
-              <source src="./static/videos/scooping_main.mp4" type="video/mp4">
+          <figure class="demo-video">
+            <video id="diffusion-rollout" controls muted playsinline preload="metadata" poster="./static/images/black_object_grasping_rollout_final.jpg" aria-label="Diffusion Policy Rollout &mdash; Black Object Grasping">
+              <source src="./static/videos/black_object_grasping_rollout_final.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/black_object_grasping_rollout_final.mp4">Download the video</a>.
             </video>
-            <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                setTimeout(function () {
-                  var mainVideo = document.getElementById("scooping-main");
-                  if (mainVideo) {
-                    mainVideo.play().catch(function (e) {
-                      console.log("Autoplay prevented:", e);
-                    });
-                  }
-                }, 3000);
-              });
-            </script>
-            <h2 class="subtitle has-text-centered is-size-6">
-              <span class="dnerf">Scooping Grasping</span>
-              — fingertip force enables adaptive contact and natural lift-off from the floor.
-            </h2>
-          </div>
-        </div>
-      </div>
+            <figcaption>Diffusion Policy Rollout &mdash; Black Object Grasping</figcaption>
+          </figure>
     </div>
   </section>
 
-  <!-- Book Demo Video (always visible) -->
-  <section class="hero teaser">
+  <!-- Data collection -->
+  <section id="data-collection" class="section research-section">
     <div class="container is-max-desktop">
-      <div class="hero-body" style="padding: 0.5rem 1.5rem 1.0rem;">
-        <div class="columns is-centered">
-          <div class="column">
-            <video id="scooping-book" controls muted playsinline preload="metadata" style="display: block; width: 100%; height: auto;">
-              <source src="./static/videos/Scooping%20Grasping%20with%20Robotic%20Hand%20-%20Book.mp4" type="video/mp4">
+      <div class="content has-text-centered">
+        <h2 class="title is-3">Data Collection</h2>
+        <p class="is-size-5">Grasping demonstrations collected for policy learning.</p>
+        <p class="preview-note">Preview footage &middot; Final edits coming soon</p>
+      </div>
+          <figure class="demo-video">
+            <video id="black-object-collection" controls muted playsinline preload="none" poster="./static/images/black_object_grasping_dataset_collection_final.jpg" aria-label="Black Object Grasping &mdash; Data Collection">
+              <source src="./static/videos/black_object_grasping_dataset_collection_final.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/black_object_grasping_dataset_collection_final.mp4">Download the video</a>.
             </video>
-            <h2 class="subtitle has-text-centered is-size-6">
-              <span class="dnerf">Scooping Grasping (Book)</span>
-              — the robotic hand pulls a book toward itself while maintaining contact.
-            </h2>
-          </div>
-        </div>
-      </div>
+            <figcaption>Black Object Grasping &mdash; Data Collection</figcaption>
+          </figure>
+          <figure class="demo-video">
+            <video id="parallel-collection" controls muted playsinline preload="none" poster="./static/images/grasping_dataset_parallel_2x2_3x3_4x4_v1.jpg" aria-label="Grasping Data Collection &mdash; 2&times;2, 3&times;3, and 4&times;4 Parallel Views">
+              <source src="./static/videos/grasping_dataset_parallel_2x2_3x3_4x4_v1.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/grasping_dataset_parallel_2x2_3x3_4x4_v1.mp4">Download the video</a>.
+            </video>
+            <figcaption>Grasping Data Collection &mdash; 2&times;2, 3&times;3, and 4&times;4 Parallel Views</figcaption>
+          </figure>
     </div>
   </section>
 
-  <!-- Side-by-Side Comparison toggle (open by default) -->
-  <section class="section" style="padding: 0.5rem 1.5rem 0.5rem;">
+  <!-- Original scooping demonstrations -->
+  <section class="section research-section">
     <div class="container is-max-desktop">
-      <details id="demo-toggle" open>
-        <summary id="demo-summary">
-          <span class="principle-label">Demo</span>
-          <span class="principle-icon"><i class="fas fa-chevron-down"></i></span>
+      <details id="principle-toggle" class="research-toggle">
+        <summary>
+          <span class="principle-label">Principle</span>
+          <span class="principle-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
         </summary>
-        <div class="principle-content" style="padding: 0 0.2rem 0.8rem;">
-          <div class="hero-body" style="padding: 0.8rem 0 0.5rem;">
-            <div class="columns is-centered">
-              <div class="column">
-                <video id="comparison2-main" controls muted playsinline height="100%">
-                  <source src="./static/videos/comparison_w_wo_impedance.mp4" type="video/mp4">
-                </video>
-                <h2 class="subtitle has-text-centered is-size-6">
-                  <span class="dnerf">Comparison</span>
-                  — full comparison video showing the effect of compliance control during scooping.
-                </h2>
-              </div>
-            </div>
-          </div>
+        <div class="principle-content">
+          <p class="section-intro">Fingertip force sensing enables compliant contact with the environment during scooping and grasping.</p>
+          <figure class="demo-video">
+            <video id="scooping-main" controls muted playsinline preload="none" aria-label="Scooping Grasping &mdash; Adaptive Contact and Lift-off from the Floor">
+              <source src="./static/videos/scooping_main.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/scooping_main.mp4">Download the video</a>.
+            </video>
+            <figcaption>Scooping Grasping &mdash; Adaptive Contact and Lift-off from the Floor</figcaption>
+          </figure>
+          <figure class="demo-video">
+            <video id="scooping-book" controls muted playsinline preload="none" aria-label="Scooping Grasping (Book) &mdash; Pulling a Book While Maintaining Contact">
+              <source src="./static/videos/Scooping%20Grasping%20with%20Robotic%20Hand%20-%20Book.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/Scooping%20Grasping%20with%20Robotic%20Hand%20-%20Book.mp4">Download the video</a>.
+            </video>
+            <figcaption>Scooping Grasping (Book) &mdash; Pulling a Book While Maintaining Contact</figcaption>
+          </figure>
         </div>
       </details>
     </div>
   </section>
 
-  <hr class="divider"
-    style="margin: 0.5rem auto; max-width: 800px; border: 0; height: 0.5px; background-color: #dbdbdb;">
+  <!-- Compliance comparison -->
+  <section class="section research-section">
+    <div class="container is-max-desktop">
+      <details id="comparison-toggle" class="research-toggle">
+        <summary>
+          <span class="principle-label">Comparison</span>
+          <span class="principle-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        <div class="principle-content">
+          <p class="section-intro">Comparison with and without compliance control during scooping.</p>
+          <figure class="demo-video">
+            <video id="comparison2-main" controls muted playsinline preload="none" aria-label="Effect of Compliance Control During Scooping">
+              <source src="./static/videos/comparison_w_wo_impedance.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/comparison_w_wo_impedance.mp4">Download the video</a>.
+            </video>
+            <figcaption>Effect of Compliance Control During Scooping</figcaption>
+          </figure>
+        </div>
+      </details>
+    </div>
+  </section>
 
-  <!-- Principle Toggle -->
-  <section class="section" style="padding: 1.0rem 1.5rem 2.0rem;">
-    <div class="container" style="max-width: 1100px;">
-      <details id="principle-toggle">
-        <summary id="principle-summary">
-          <span class="principle-label">Principle</span>
-          <span class="principle-icon"><i class="fas fa-chevron-down"></i></span>
+  <!-- Additional Technique Toggle -->
+  <section class="section research-section">
+    <div class="container is-max-desktop">
+      <details id="additional-technique" class="research-toggle">
+        <summary>
+          <span class="principle-label">Additional Technique</span>
+          <span class="principle-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
         </summary>
 
         <div class="principle-content">
 
           <!-- Fingertip Force Transformation: YouTube videos -->
           <div class="content has-text-centered" style="margin-top: 2rem;">
-            <h2 class="title is-3">Fingertip Force Transformation</h2>
+            <h2 class="title is-4">Compensating for Low Mechanical Stiffness</h2>
             <p class="is-size-5">
-              Fingertip force-torque values are transformed to the wrist frame and combined
-              with the wrist F/T sensor for compliance control of the manipulator.
+              To compensate for the robotic hand's low mechanical stiffness, we augment wrist force feedback
+              with forces measured by the fingertip sensors. Each fingertip wrench is transformed into the
+              wrist frame and added to the wrist F/T reading, allowing the manipulator to respond
+              compliantly to fingertip contact during scooping.
             </p>
           </div>
 
@@ -331,7 +325,7 @@
             <!-- Left: YouTube Shorts -->
             <div class="column">
               <div class="publication-video">
-                <iframe src="https://www.youtube.com/embed/eXF3unYd2I0" frameborder="0"
+                <iframe loading="lazy" title="Fingertip contact force demonstration" src="https://www.youtube.com/embed/eXF3unYd2I0" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen>
                 </iframe>
@@ -344,7 +338,7 @@
             <!-- Right: YouTube wide -->
             <div class="column">
               <div class="publication-video">
-                <iframe src="https://www.youtube.com/embed/Jit1Lt0djpE" frameborder="0"
+                <iframe loading="lazy" title="Fingertip contact force demonstration" src="https://www.youtube.com/embed/Jit1Lt0djpE" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen>
                 </iframe>
@@ -402,7 +396,7 @@
           <div class="hero-body" style="padding: 0.5rem 0 0.5rem;">
             <div class="columns is-centered">
               <div class="column">
-                <video id="fingertip-force" controls muted playsinline height="100%">
+                <video id="fingertip-force" controls muted playsinline preload="none">
                   <source src="./static/videos/fingertip_force_transformation.mp4" type="video/mp4">
                 </video>
                 <h2 class="subtitle has-text-centered is-size-6">
@@ -419,8 +413,9 @@
           <div class="content has-text-centered" style="margin-top: 1.5rem;">
             <h2 class="title is-3">Comparison: w/ vs. w/o Wrist Wrench Aggregator</h2>
             <p class="is-size-5">
-              Without the aggregator, the manipulator cannot react sensitively to floor contact.
-              With the aggregator, the combined fingertip wrench enables immediate compliant response.
+              The hand's low mechanical stiffness can limit the response to fingertip contact when using wrist
+              feedback alone. Adding the transformed fingertip forces to the wrist feedback helps the
+              manipulator respond more sensitively to floor contact.
             </p>
             <p class="is-size-5" style="margin-top: 0.4rem;">
               <strong>Click on any video to play both simultaneously.</strong>
@@ -431,7 +426,7 @@
             <div class="hero-body" style="padding: 0.5rem 0 1.5rem;">
               <div class="columns is-centered">
                 <div class="column">
-                  <video id="comparison1-without" muted playsinline height="100%">
+                  <video id="comparison1-without" muted playsinline preload="none">
                     <source src="./static/videos/comparison1_without_impedance.mp4" type="video/mp4">
                   </video>
                   <h2 class="subtitle has-text-centered is-size-6">
@@ -440,7 +435,7 @@
                   </h2>
                 </div>
                 <div class="column">
-                  <video id="comparison1-with" muted playsinline height="100%">
+                  <video id="comparison1-with" muted playsinline preload="none">
                     <source src="./static/videos/comparison1_with_impedance.mp4" type="video/mp4">
                   </video>
                   <h2 class="subtitle has-text-centered is-size-6">
@@ -461,7 +456,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="https://github.com/r-ush" class="external-link">
+        <a class="icon-link external-link" href="https://github.com/r-ush">
           <i class="fab fa-github"></i>
         </a>
       </div>

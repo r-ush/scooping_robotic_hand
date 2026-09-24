@@ -1,22 +1,18 @@
-# Scooping Grasping with Robotic Hand
+# Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts)
 
 > A research project by Seunghwan Um (엄승환 / rush / r-ush), Tae Hyun Bae, and Prof. Hyouk Ryeol Choi at Sungkyunkwan University.
 
 ## Overview
 
-This project demonstrates a robotic hand performing a scooping grasping motion — picking up objects from the floor using a natural scooping lift-off.
+This project presents diffusion policy rollouts and grasping data collection with an AIDIN Robotics hand. The current rollout and data collection videos are preview edits.
 
-Controlling scooping motion is extremely challenging for robotic hands with rigid fingertips, because contact with the environment creates constrained (closed-loop) kinematic chains that can damage the system. Soft fingertips trade off grasping force and positional accuracy.
+## Page Sections
 
-## Key Contribution
-
-Using fingertip force-torque sensors attached to an AIDIN Robotics hand, we solved this problem without soft fingertips:
-
-1. **Fingertip Force Transformation**: Each fingertip wrench is measured and transformed to the wrist frame via the kinematic chain.
-2. **Wrist Wrench Aggregation**: All fingertip wrenches are aggregated and combined with the physical wrist F/T sensor reading.
-3. **Compliance Control**: The combined wrench feeds into an impedance controller, enabling the manipulator to react compliantly to both wrist-level and fingertip-level contacts during scooping.
-
-This approach avoids closed-loop chains upon contact, enabling safe interaction against external constraints.
+1. **Main Demo**: Diffusion policy rollout for black object grasping.
+2. **Data Collection**: Black object grasping demonstrations and parallel collection views.
+3. **Principle**: Original scooping and book grasping videos showing compliant surface contact.
+4. **Comparison**: Scooping with and without compliance control.
+5. **Additional Technique**: Fingertip force feedback compensates for the hand's low mechanical stiffness. Fingertip wrenches are transformed into the wrist frame and combined with the wrist force/torque sensor reading as input to the manipulator's compliance controller.
 
 ## Links
 

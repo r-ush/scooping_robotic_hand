@@ -158,15 +158,13 @@ body {
 }
 
 /* ── Principle toggle ─────────────────────────────── */
-#principle-toggle,
-#demo-toggle {
+.research-toggle {
   border: 1.5px solid #dbdbdb;
   border-radius: 12px;
   overflow: hidden;
 }
 
-#principle-summary,
-#demo-summary {
+.research-toggle > summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -178,11 +176,9 @@ body {
   transition: background-color 0.2s ease;
 }
 
-#principle-summary::-webkit-details-marker,
-#demo-summary::-webkit-details-marker { display: none; }
+.research-toggle > summary::-webkit-details-marker { display: none; }
 
-#principle-summary:hover,
-#demo-summary:hover {
+.research-toggle > summary:hover {
   background-color: #efefef;
 }
 
@@ -200,8 +196,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-#principle-toggle[open] .principle-icon,
-#demo-toggle[open] .principle-icon {
+.research-toggle[open] > summary .principle-icon {
   transform: rotate(180deg);
 }
 
@@ -251,4 +246,60 @@ body {
   margin: 0.9rem 0;
   font-size: 1.05rem;
   overflow-x: auto;
+}
+
+/* Rollout and data collection chapters */
+.research-section {
+  padding: 1rem 1.5rem;
+}
+
+.demo-video {
+  margin: 1.5rem 0;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #111;
+}
+
+.demo-video figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+}
+
+.preview-note {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.section-intro {
+  margin: 1.25rem 0;
+  line-height: 1.65;
+}
+
+.research-toggle > summary:focus-visible {
+  outline: 3px solid hsl(204, 86%, 53%);
+  outline-offset: -3px;
+}
+
+@media screen and (max-width: 600px) {
+  .publication-title.title {
+    font-size: 2rem;
+  }
+  .math-block {
+    padding: 1rem;
+  }
+}
+
+.publication-subtitle {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.6em;
+  font-weight: 500;
+  line-height: 1.3;
 }
