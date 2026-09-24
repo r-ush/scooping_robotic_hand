@@ -13,7 +13,7 @@ The additional technique compensates for low hand mechanical stiffness by transf
 
 ## Videos and language
 
-Main Demo uses the final diffusion policy rollout. Data Collection uses the final combined collection video. The web copies use H.264/AAC with MP4 fast start; the HDR collection source is tone-mapped to SDR.
+Main Demo uses the final diffusion policy rollout. Data Collection uses the final combined collection video. The web copies use H.264/AAC with MP4 fast start; the HDR collection source is tone-mapped to SDR with nominal peak luminance 300, checked against the rollout and across the collection edit.
 
 Videos play muted when visible, pause outside the viewport or in a closed section, and pause while the browser tab is hidden. Native playback controls remain available. EN/KR switches the page text without reloading media; English is the default, and an explicit language choice is remembered.
 
@@ -26,3 +26,5 @@ The media history was compacted to retain only the current web videos. Previous 
 ## Template
 
 Website template borrowed from [NeRFies](https://github.com/nerfies/nerfies.github.io).
+
+Typography uses self-hosted Pretendard Variable 1.3.9 with a shared English/Korean type scale. The font license is included in static/fonts/Pretendard-LICENSE.txt.

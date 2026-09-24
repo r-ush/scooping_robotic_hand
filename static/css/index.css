@@ -1,15 +1,26 @@
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-style: normal;
+  font-weight: 45 920;
+  font-display: swap;
+  src: url('../fonts/PretendardVariable.woff2') format('woff2');
+}
+
+:root {
+  --page-font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+}
+
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: var(--page-font);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #3f4650;
+  -webkit-font-smoothing: antialiased;
 }
 
 [hidden] { display: none !important; }
 html[lang="ko"] body { word-break: keep-all; overflow-wrap: anywhere; }
-html[lang="ko"] body,
-html[lang="ko"] .publication-title,
-html[lang="ko"] .principle-label,
-html[lang="ko"] .math-desc {
-  font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-}
 html[lang="ko"] .publication-title { word-break: keep-all; overflow-wrap: normal; }
 html[lang="ko"] .has-text-justified { text-align: left !important; }
 .navbar { min-height: 3.5rem; }
@@ -340,4 +351,82 @@ video {
   font-size: 0.6em;
   font-weight: 500;
   line-height: 1.3;
+}
+
+/* A shared type scale keeps Korean and English in the same visual rhythm. */
+.title,
+.subtitle,
+.teaser,
+.publication-title,
+.publication-authors,
+.principle-label,
+.math-title,
+.math-desc,
+button {
+  font-family: var(--page-font);
+}
+
+.title {
+  color: #252c35;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.publication-title.title {
+  max-width: 860px;
+  margin: 0 auto 1.4rem;
+  font-size: clamp(1.85rem, 3.3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.publication-subtitle {
+  margin-top: 0.75rem;
+  font-size: clamp(1rem, 1.65vw, 1.25rem);
+  font-weight: 450;
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+  color: #626b76;
+}
+
+.publication-authors.is-size-5 {
+  font-size: 1.05rem !important;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.publication-authors + .publication-authors {
+  margin-top: 0.35rem;
+  font-size: 0.95rem !important;
+  color: #69717c;
+}
+
+.title.is-3 { font-size: 1.75rem; line-height: 1.4; margin-bottom: 1rem; }
+.title.is-4 { font-size: 1.4rem; line-height: 1.45; }
+.content .is-size-5 { font-size: 1.05rem !important; line-height: 1.75; color: #5c6570; }
+.content.has-text-justified { text-align: left !important; line-height: 1.85; }
+.content.has-text-justified p:not(:last-child) { margin-bottom: 1rem; }
+.content strong { font-weight: 600; color: #303944; }
+
+.demo-video figcaption,
+.subtitle.is-size-6 {
+  font-size: 0.925rem !important;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  color: #606975;
+}
+.principle-label { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.015em; }
+.math-title { font-size: 1.05rem; font-weight: 600; }
+.math-desc { font-size: 0.975rem; line-height: 1.8; }
+html[lang="ko"] .dnerf { font-variant: normal; }
+
+@media screen and (max-width: 600px) {
+  .hero > .hero-body { padding: 2.4rem 1.5rem 1.5rem; }
+  .publication-title.title { font-size: 1.85rem; }
+  .publication-authors.is-size-5 { font-size: 0.975rem !important; }
+  .title.is-3 { font-size: 1.5rem; }
+  .content .is-size-5 { font-size: 1rem !important; }
+  .content.has-text-justified { font-size: 0.975rem; line-height: 1.85; }
 }
