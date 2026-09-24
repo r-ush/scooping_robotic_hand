@@ -1,34 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-    content="Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness.">
-  <meta name="keywords"
-    content="스쿠핑 파지, 로봇 손, 손가락 힘 센서, 순응 제어, 임피던스 제어, 엄승환, 성균관대, rush, Scooping Grasping, Robotic Hand, Fingertip Force Sensing, Diffusion Policy, Rollout, Data Collection, Impedance Control, Seunghwan Um, AIDIN Robotics, r-ush">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index, follow">
-  <meta name="google-site-verification" content="google46985f01587fa3e1">
-  <meta name="naver-site-verification" content="3307571a966fd541ccaf46efdb86587fa3dba188">
-  <meta name="NaverBot" content="All">
-  <meta name="Yeti" content="All">
-
-  <link rel="canonical" href="https://r-ush.github.io/scooping_robotic_hand/">
-
-  <meta property="og:title" content="Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts) | Seunghwan Um">
-  <meta property="og:description" content="Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://r-ush.github.io/scooping_robotic_hand/">
-  <meta property="og:image" content="https://r-ush.github.io/images/HandGrasp.png">
-  <meta property="og:site_name" content="Seunghwan Um">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts) | Seunghwan Um">
-  <meta name="twitter:description" content="Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness.">
-  <meta name="twitter:image" content="https://r-ush.github.io/images/HandGrasp.png">
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness." name="description"/>
+<meta content="스쿠핑 파지, 로봇 손, 손가락 힘 센서, 순응 제어, 임피던스 제어, 엄승환, 성균관대, rush, Scooping Grasping, Robotic Hand, Fingertip Force Sensing, Diffusion Policy, Rollout, Data Collection, Impedance Control, Seunghwan Um, AIDIN Robotics, r-ush" name="keywords"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<meta content="google46985f01587fa3e1" name="google-site-verification"/>
+<meta content="3307571a966fd541ccaf46efdb86587fa3dba188" name="naver-site-verification"/>
+<meta content="All" name="NaverBot"/>
+<meta content="All" name="Yeti"/>
+<link href="https://r-ush.github.io/scooping_robotic_hand/" rel="canonical"/>
+<meta content="Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts) | Seunghwan Um" property="og:title"/>
+<meta content="Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://r-ush.github.io/scooping_robotic_hand/" property="og:url"/>
+<meta content="https://r-ush.github.io/images/HandGrasp.png" property="og:image"/>
+<meta content="Seunghwan Um" property="og:site_name"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts) | Seunghwan Um" name="twitter:title"/>
+<meta content="Diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness." name="twitter:description"/>
+<meta content="https://r-ush.github.io/images/HandGrasp.png" name="twitter:image"/>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
@@ -48,16 +42,14 @@
     "mainEntityOfPage": "https://r-ush.github.io/scooping_robotic_hand/"
   }
   </script>
-
-  <noscript>
+<noscript>
     This page demonstrates scooping grasping motion with a robotic hand using fingertip force sensing. Please enable
     JavaScript to see the visualization.
   </noscript>
-  <title>Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts) | Seunghwan Um</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
+<title>Scooping Grasping with Robotic Hand (with Diffusion Policy Rollouts) | Seunghwan Um</title>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
@@ -68,24 +60,20 @@
 
     gtag('config', 'G-PYVRSFMDRL');
   </script>
+<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Noto+Sans+KR|Castoro" rel="stylesheet"/>
+<link href="./static/css/bulma.min.css" rel="stylesheet"/>
+<link href="./static/css/bulma-carousel.min.css" rel="stylesheet"/>
+<link href="./static/css/bulma-slider.min.css" rel="stylesheet"/>
+<link href="./static/css/fontawesome.all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet"/>
+<link href="./static/css/index.css" rel="stylesheet"/>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+<script defer="" src="./static/js/fontawesome.all.min.js"></script>
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-
-  <!-- MathJax for equation rendering -->
-  <script>
+<script defer="" src="./static/js/index.js"></script>
+<!-- MathJax for equation rendering -->
+<script>
     window.MathJax = {
       tex: {
         inlineMath: [['\\(', '\\)']],
@@ -95,383 +83,273 @@
       options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
     };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
-
 <body>
-
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div class="navbar-menu">
-      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <a class="navbar-item" href="https://r-ush.github.io/">
-          <span class="icon">
-            <i class="fas fa-home"></i>
-          </span>
-        </a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More Research
-          </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://r-ush.github.io/m0609_impedance_control/">
-              M0609 Impedance Control
-            </a>
-            <a class="navbar-item" href="https://r-ush.github.io/rb10_admittance_control/">
-              RB10 Admittance Control
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </nav>
-
-
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Scooping Grasping with Robotic Hand <span class="publication-subtitle">(with Diffusion Policy Rollouts)</span></h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://r-ush.github.io/">Seunghwan Um</a>,</span>
-              <span class="author-block">
-                <a href="">Tae Hyun Bae</a>,</span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=EDrjHWsAAAAJ&hl=ko" target="_blank">Hyouk Ryeol
+<nav aria-label="main navigation" class="navbar" role="navigation">
+<div class="navbar-brand">
+<button aria-controls="research-menu" aria-expanded="false" aria-label="menu" class="navbar-burger" role="button" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+<div aria-label="Language / 언어" class="language-switch" role="group">
+<button aria-label="English" aria-pressed="true" data-set-language="en" type="button">EN</button>
+<button aria-label="한국어" aria-pressed="false" data-set-language="ko" type="button">KR</button>
+</div></div>
+<div class="navbar-menu" id="research-menu">
+<div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+<a aria-label="Home / 홈" class="navbar-item" href="https://r-ush.github.io/">
+<span class="icon">
+<i class="fas fa-home"></i>
+</span>
+</a>
+<div class="navbar-item has-dropdown is-hoverable">
+<a class="navbar-link"><span data-language="en" lang="en">More Research</span><span data-language="ko" hidden="" lang="ko">다른 연구</span></a>
+<div class="navbar-dropdown"><a class="navbar-item" href="https://r-ush.github.io/contact_residual_learning/"><span data-language="en" lang="en">Contact Residual Learning</span><span data-language="ko" hidden="" lang="ko">접촉 잔차 학습</span></a>
+<a class="navbar-item" href="https://r-ush.github.io/m0609_impedance_control/"><span data-language="en" lang="en">M0609 Impedance Control</span><span data-language="ko" hidden="" lang="ko">M0609 임피던스 제어</span></a>
+<a class="navbar-item" href="https://r-ush.github.io/rb10_admittance_control/"><span data-language="en" lang="en">RB10 Admittance Control</span><span data-language="ko" hidden="" lang="ko">RB10 어드미턴스 제어</span></a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-body">
+<div class="container is-max-desktop">
+<div class="columns is-centered">
+<div class="column has-text-centered">
+<h1 class="title is-1 publication-title"><span data-language="en" lang="en">Scooping Grasping with Robotic Hand <span class="publication-subtitle">(with Diffusion Policy Rollouts)</span></span><span data-language="ko" hidden="" lang="ko">로봇 손을 이용한 스쿠핑 파지 <span class="publication-subtitle">(Diffusion Policy 롤아웃 포함)</span></span></h1>
+<div class="is-size-5 publication-authors">
+<span class="author-block">
+<a href="https://r-ush.github.io/">Seunghwan Um</a>,</span>
+<span class="author-block">
+<a href="">Tae Hyun Bae</a>,</span>
+<span class="author-block">
+<a href="https://scholar.google.com/citations?user=EDrjHWsAAAAJ&amp;hl=ko" target="_blank">Hyouk Ryeol
                   Choi</a></span>
-            </div>
+</div>
+<div class="is-size-5 publication-authors">
+<span class="author-block"><span data-language="en" lang="en">Sungkyunkwan University</span><span data-language="ko" hidden="" lang="ko">성균관대학교</span></span>
+</div>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">Sungkyunkwan University</span>
-            </div>
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/r-ush" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (TBD)</span>
-                  </a>
-                </span>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Abstract -->
-  <section class="section" style="padding: 1.5rem 1.5rem 0.5rem;">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Scooping lets a robotic hand lift and grasp objects through contact with the supporting surface.
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Abstract -->
+<section class="section" style="padding: 1.5rem 1.5rem 0.5rem;">
+<div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h2 class="title is-3"><span data-language="en" lang="en">Abstract</span><span data-language="ko" hidden="" lang="ko">연구 개요</span></h2>
+<div class="content has-text-justified">
+<p><span data-language="en" lang="en">Scooping lets a robotic hand lift and grasp objects through contact with the supporting surface.
               This page presents <strong>diffusion policy rollouts</strong> and the <strong>data collection</strong>
-              demonstrations used to study this motion with an AIDIN Robotics hand.
-            </p>
-            <p>
-              Contact is challenging for robotic hands with rigid fingertips. Fingertip force sensing supports
-              compliant interaction during scooping, as illustrated in the principle and comparison videos below.
-            </p>
-            <p>
-              As an additional technique, we compensate for the hand's <strong>low mechanical stiffness</strong>
+              demonstrations used to study this motion with an AIDIN Robotics hand.</span><span data-language="ko" hidden="" lang="ko">스쿠핑은 로봇 손이 바닥면과 접촉하면서 물체를 들어 올려 파지하는 동작입니다. 이 페이지에서는 AIDIN Robotics 핸드로 수행한 <strong>Diffusion Policy 롤아웃</strong>과 <strong>데이터 수집</strong> 과정을 소개합니다.</span></p>
+<p><span data-language="en" lang="en">Contact is challenging for robotic hands with rigid fingertips. Fingertip force sensing supports
+              compliant interaction during scooping, as illustrated in the principle and comparison videos below.</span><span data-language="ko" hidden="" lang="ko">단단한 손끝을 가진 로봇 손은 환경과의 접촉을 제어하기 어렵습니다. 손끝 힘 센싱을 통해 스쿠핑 중 유연한 접촉을 구현하며, 아래 원리 및 비교 영상에서 그 효과를 확인할 수 있습니다.</span></p>
+<p><span data-language="en" lang="en">As an additional technique, we compensate for the hand's <strong>low mechanical stiffness</strong>
               by transforming fingertip sensor forces into the wrist frame and adding them to wrist force feedback
-              for the manipulator's compliance controller.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /Abstract -->
+              for the manipulator's compliance controller.</span><span data-language="ko" hidden="" lang="ko">추가 기법으로, 핸드의 <strong>낮은 기계적 강성</strong>을 보완하기 위해 손끝 센서의 힘을 손목 좌표계로 변환한 뒤 손목 힘 피드백에 더하여 로봇 팔의 순응 제어에 활용합니다.</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- /Abstract -->
+<!-- Diffusion policy rollout -->
+<section class="section research-section" id="main-demo">
+<div class="container is-max-desktop">
+<div class="content has-text-centered">
+<h2 class="title is-3"><span data-language="en" lang="en">Main Demo</span><span data-language="ko" hidden="" lang="ko">메인 데모</span></h2>
+<p class="is-size-5"><span data-language="en" lang="en">Scooping grasping with a robotic hand using a diffusion policy.</span><span data-language="ko" hidden="" lang="ko">Diffusion Policy를 이용한 로봇 손의 스쿠핑 파지.</span></p>
 
+</div>
+<figure class="demo-video">
+<video aria-labelledby="rollout-caption" controls="" height="1080" id="diffusion-rollout" muted="" playsinline="" poster="./static/images/black_object_grasping_rollout_final.jpg?v=final" preload="metadata" style="aspect-ratio: 1920 / 1080;" width="1920"><source src="./static/videos/black_object_grasping_rollout_final.mp4?v=final" type="video/mp4"/><a href="./static/videos/black_object_grasping_rollout_final.mp4?v=final"><span data-language="en" lang="en">Download video</span><span data-language="ko" hidden="" lang="ko">영상 다운로드</span></a></video>
+<figcaption id="rollout-caption"><span data-language="en" lang="en">Policy rollout — Grasping objects of various sizes.</span><span data-language="ko" hidden="" lang="ko">Policy rollout — 다양한 크기의 물체 파지 가능.</span></figcaption>
+</figure>
+</div>
+</section>
+<!-- Data collection -->
+<section class="section research-section" id="data-collection">
+<div class="container is-max-desktop">
+<div class="content has-text-centered">
+<h2 class="title is-3"><span data-language="en" lang="en">Data Collection</span><span data-language="ko" hidden="" lang="ko">데이터 수집</span></h2>
+<p class="is-size-5"><span data-language="en" lang="en">Grasping demonstrations collected for policy learning.</span><span data-language="ko" hidden="" lang="ko">정책 학습을 위한 파지 시연 데이터 수집.</span></p>
 
-  <!-- Diffusion policy rollout -->
-  <section id="main-demo" class="section research-section">
-    <div class="container is-max-desktop">
-      <div class="content has-text-centered">
-        <h2 class="title is-3">Main Demo</h2>
-        <p class="is-size-5">Scooping grasping with a robotic hand using a diffusion policy.</p>
-        <p class="preview-note">Preview footage &middot; Final edit coming soon</p>
-      </div>
-          <figure class="demo-video">
-            <video id="diffusion-rollout" controls muted playsinline preload="metadata" poster="./static/images/black_object_grasping_rollout_final.jpg" aria-label="Diffusion Policy Rollout &mdash; Black Object Grasping">
-              <source src="./static/videos/black_object_grasping_rollout_final.mp4" type="video/mp4">
-              Your browser does not support embedded video. <a href="./static/videos/black_object_grasping_rollout_final.mp4">Download the video</a>.
-            </video>
-            <figcaption>Diffusion Policy Rollout &mdash; Black Object Grasping</figcaption>
-          </figure>
-    </div>
-  </section>
+</div>
+<figure class="demo-video">
+<video aria-labelledby="collection-caption" controls="" height="1080" id="black-object-collection" muted="" playsinline="" poster="./static/images/grasping_dataset_collection_combined_1p5x_v2_brightness.jpg" preload="none" style="aspect-ratio: 1920 / 1080;" width="1920"><source src="./static/videos/grasping_dataset_collection_combined_1p5x_v2_brightness.mp4" type="video/mp4"/><a href="./static/videos/grasping_dataset_collection_combined_1p5x_v2_brightness.mp4"><span data-language="en" lang="en">Download video</span><span data-language="ko" hidden="" lang="ko">영상 다운로드</span></a></video>
+<figcaption id="collection-caption"><span data-language="en" lang="en">Compliance control absorbs contact impacts, reducing operator workload and making data collection easier.</span><span data-language="ko" hidden="" lang="ko">순응 제어가 접촉 충격을 흡수하여 작업자의 조작 부담을 줄이고 데이터 수집을 더 쉽게 만듭니다.</span></figcaption>
+</figure>
 
-  <!-- Data collection -->
-  <section id="data-collection" class="section research-section">
-    <div class="container is-max-desktop">
-      <div class="content has-text-centered">
-        <h2 class="title is-3">Data Collection</h2>
-        <p class="is-size-5">Grasping demonstrations collected for policy learning.</p>
-        <p class="preview-note">Preview footage &middot; Final edits coming soon</p>
-      </div>
-          <figure class="demo-video">
-            <video id="black-object-collection" controls muted playsinline preload="none" poster="./static/images/black_object_grasping_dataset_collection_final.jpg" aria-label="Black Object Grasping &mdash; Data Collection">
-              <source src="./static/videos/black_object_grasping_dataset_collection_final.mp4" type="video/mp4">
-              Your browser does not support embedded video. <a href="./static/videos/black_object_grasping_dataset_collection_final.mp4">Download the video</a>.
-            </video>
-            <figcaption>Black Object Grasping &mdash; Data Collection</figcaption>
-          </figure>
-          <figure class="demo-video">
-            <video id="parallel-collection" controls muted playsinline preload="none" poster="./static/images/grasping_dataset_parallel_2x2_3x3_4x4_v1.jpg" aria-label="Grasping Data Collection &mdash; 2&times;2, 3&times;3, and 4&times;4 Parallel Views">
-              <source src="./static/videos/grasping_dataset_parallel_2x2_3x3_4x4_v1.mp4" type="video/mp4">
-              Your browser does not support embedded video. <a href="./static/videos/grasping_dataset_parallel_2x2_3x3_4x4_v1.mp4">Download the video</a>.
-            </video>
-            <figcaption>Grasping Data Collection &mdash; 2&times;2, 3&times;3, and 4&times;4 Parallel Views</figcaption>
-          </figure>
-    </div>
-  </section>
-
-  <!-- Original scooping demonstrations -->
-  <section class="section research-section">
-    <div class="container is-max-desktop">
-      <details id="principle-toggle" class="research-toggle">
-        <summary>
-          <span class="principle-label">Principle</span>
-          <span class="principle-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
-        </summary>
-        <div class="principle-content">
-          <p class="section-intro">Fingertip force sensing enables compliant contact with the environment during scooping and grasping.</p>
-          <figure class="demo-video">
-            <video id="scooping-main" controls muted playsinline preload="none" aria-label="Scooping Grasping &mdash; Adaptive Contact and Lift-off from the Floor">
-              <source src="./static/videos/scooping_main.mp4" type="video/mp4">
-              Your browser does not support embedded video. <a href="./static/videos/scooping_main.mp4">Download the video</a>.
-            </video>
-            <figcaption>Scooping Grasping &mdash; Adaptive Contact and Lift-off from the Floor</figcaption>
-          </figure>
-          <figure class="demo-video">
-            <video id="scooping-book" controls muted playsinline preload="none" aria-label="Scooping Grasping (Book) &mdash; Pulling a Book While Maintaining Contact">
-              <source src="./static/videos/Scooping%20Grasping%20with%20Robotic%20Hand%20-%20Book.mp4" type="video/mp4">
-              Your browser does not support embedded video. <a href="./static/videos/Scooping%20Grasping%20with%20Robotic%20Hand%20-%20Book.mp4">Download the video</a>.
-            </video>
-            <figcaption>Scooping Grasping (Book) &mdash; Pulling a Book While Maintaining Contact</figcaption>
-          </figure>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- Compliance comparison -->
-  <section class="section research-section">
-    <div class="container is-max-desktop">
-      <details id="comparison-toggle" class="research-toggle">
-        <summary>
-          <span class="principle-label">Comparison</span>
-          <span class="principle-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
-        </summary>
-        <div class="principle-content">
-          <p class="section-intro">Comparison with and without compliance control during scooping.</p>
-          <figure class="demo-video">
-            <video id="comparison2-main" controls muted playsinline preload="none" aria-label="Effect of Compliance Control During Scooping">
-              <source src="./static/videos/comparison_w_wo_impedance.mp4" type="video/mp4">
-              Your browser does not support embedded video. <a href="./static/videos/comparison_w_wo_impedance.mp4">Download the video</a>.
-            </video>
-            <figcaption>Effect of Compliance Control During Scooping</figcaption>
-          </figure>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- Additional Technique Toggle -->
-  <section class="section research-section">
-    <div class="container is-max-desktop">
-      <details id="additional-technique" class="research-toggle">
-        <summary>
-          <span class="principle-label">Additional Technique</span>
-          <span class="principle-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
-        </summary>
-
-        <div class="principle-content">
-
-          <!-- Fingertip Force Transformation: YouTube videos -->
-          <div class="content has-text-centered" style="margin-top: 2rem;">
-            <h2 class="title is-4">Compensating for Low Mechanical Stiffness</h2>
-            <p class="is-size-5">
-              To compensate for the robotic hand's low mechanical stiffness, we augment wrist force feedback
+</div>
+</section>
+<!-- Original scooping demonstrations -->
+<section class="section research-section">
+<div class="container is-max-desktop">
+<details class="research-toggle" id="principle-toggle">
+<summary>
+<span class="principle-label"><span data-language="en" lang="en">Principle</span><span data-language="ko" hidden="" lang="ko">원리</span></span>
+<span aria-hidden="true" class="principle-icon"><i class="fas fa-chevron-down"></i></span>
+</summary>
+<div class="principle-content">
+<p class="section-intro"><span data-language="en" lang="en">Fingertip force sensing enables compliant contact with the environment during scooping and grasping.</span><span data-language="ko" hidden="" lang="ko">손끝 힘 센싱을 통해 스쿠핑과 파지 중 환경과 유연하게 접촉할 수 있습니다.</span></p>
+<figure class="demo-video">
+<video aria-labelledby="scooping-main-caption" controls="" height="1080" id="scooping-main" muted="" playsinline="" preload="none" style="aspect-ratio: 1920 / 1080;" width="1920"><source src="./static/videos/scooping_main.mp4" type="video/mp4"/><a href="./static/videos/scooping_main.mp4"><span data-language="en" lang="en">Download video</span><span data-language="ko" hidden="" lang="ko">영상 다운로드</span></a></video>
+<figcaption id="scooping-main-caption"><span data-language="en" lang="en">Scooping Grasping — Adaptive Contact and Lift-off from the Floor</span><span data-language="ko" hidden="" lang="ko">스쿠핑 파지 — 접촉에 적응하면서 바닥의 물체를 들어 올립니다.</span></figcaption>
+</figure>
+<figure class="demo-video">
+<video aria-labelledby="scooping-book-caption" controls="" height="1080" id="scooping-book" muted="" playsinline="" preload="none" style="aspect-ratio: 1920 / 1080;" width="1920"><source src="./static/videos/Scooping%20Grasping%20with%20Robotic%20Hand%20-%20Book.mp4" type="video/mp4"/><a href="./static/videos/Scooping%20Grasping%20with%20Robotic%20Hand%20-%20Book.mp4"><span data-language="en" lang="en">Download video</span><span data-language="ko" hidden="" lang="ko">영상 다운로드</span></a></video>
+<figcaption id="scooping-book-caption"><span data-language="en" lang="en">Scooping Grasping (Book) — Pulling a Book While Maintaining Contact</span><span data-language="ko" hidden="" lang="ko">책 스쿠핑 파지 — 접촉을 유지하면서 책을 당깁니다.</span></figcaption>
+</figure>
+</div>
+</details>
+</div>
+</section>
+<!-- Compliance comparison -->
+<section class="section research-section">
+<div class="container is-max-desktop">
+<details class="research-toggle" id="comparison-toggle">
+<summary>
+<span class="principle-label"><span data-language="en" lang="en">Comparison</span><span data-language="ko" hidden="" lang="ko">비교</span></span>
+<span aria-hidden="true" class="principle-icon"><i class="fas fa-chevron-down"></i></span>
+</summary>
+<div class="principle-content">
+<p class="section-intro"><span data-language="en" lang="en">Comparison with and without compliance control during scooping.</span><span data-language="ko" hidden="" lang="ko">스쿠핑 동작에서 순응 제어 적용 여부에 따른 비교.</span></p>
+<figure class="demo-video">
+<video aria-labelledby="comparison2-main-caption" controls="" height="1080" id="comparison2-main" muted="" playsinline="" preload="none" style="aspect-ratio: 1920 / 1080;" width="1920"><source src="./static/videos/comparison_w_wo_impedance.mp4" type="video/mp4"/><a href="./static/videos/comparison_w_wo_impedance.mp4"><span data-language="en" lang="en">Download video</span><span data-language="ko" hidden="" lang="ko">영상 다운로드</span></a></video>
+<figcaption id="comparison2-main-caption"><span data-language="en" lang="en">Effect of Compliance Control During Scooping</span><span data-language="ko" hidden="" lang="ko">스쿠핑 중 순응 제어의 효과</span></figcaption>
+</figure>
+</div>
+</details>
+</div>
+</section>
+<!-- Additional Technique Toggle -->
+<section class="section research-section">
+<div class="container is-max-desktop">
+<details class="research-toggle" id="additional-technique">
+<summary>
+<span class="principle-label"><span data-language="en" lang="en">Additional Technique</span><span data-language="ko" hidden="" lang="ko">추가 기법</span></span>
+<span aria-hidden="true" class="principle-icon"><i class="fas fa-chevron-down"></i></span>
+</summary>
+<div class="principle-content">
+<!-- Fingertip Force Transformation: YouTube videos -->
+<div class="content has-text-centered" style="margin-top: 2rem;">
+<h2 class="title is-4"><span data-language="en" lang="en">Compensating for Low Mechanical Stiffness</span><span data-language="ko" hidden="" lang="ko">낮은 기계적 강성 보완</span></h2>
+<p class="is-size-5"><span data-language="en" lang="en">To compensate for the robotic hand's low mechanical stiffness, we augment wrist force feedback
               with forces measured by the fingertip sensors. Each fingertip wrench is transformed into the
               wrist frame and added to the wrist F/T reading, allowing the manipulator to respond
-              compliantly to fingertip contact during scooping.
-            </p>
-          </div>
-
-          <div class="columns is-centered" style="margin-top: 1rem;">
-            <!-- Left: YouTube Shorts -->
-            <div class="column">
-              <div class="publication-video">
-                <iframe loading="lazy" title="Fingertip contact force demonstration" src="https://www.youtube.com/embed/eXF3unYd2I0" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
-              </div>
-              <h2 class="subtitle has-text-centered is-size-6" style="margin-top: 0.6rem;">
-                <span class="dnerf">Fingertip Contact Force</span>
-                — external forces are measured at each fingertip.
-              </h2>
-            </div>
-            <!-- Right: YouTube wide -->
-            <div class="column">
-              <div class="publication-video">
-                <iframe loading="lazy" title="Fingertip contact force demonstration" src="https://www.youtube.com/embed/Jit1Lt0djpE" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
-              </div>
-              <h2 class="subtitle has-text-centered is-size-6" style="margin-top: 0.6rem;">
-                <span class="dnerf">Fingertip Contact Force</span>
-                — external forces are measured at each fingertip.
-              </h2>
-            </div>
-          </div>
-
-          <!-- Math: Force Aggregation -->
-          <div class="math-block">
-            <h3 class="math-title">Wrench Aggregation to Wrist Frame</h3>
-            <p class="math-desc">
-              Each fingertip wrench \(\mathbf{w}_i = (\mathbf{f}_i,\, \boldsymbol{\tau}_i)\) measured in the fingertip
+              compliantly to fingertip contact during scooping.</span><span data-language="ko" hidden="" lang="ko">로봇 손의 낮은 기계적 강성을 보완하기 위해 손끝 센서에서 측정한 힘을 손목 힘 피드백에 더합니다. 각 손끝의 힘과 토크를 손목 좌표계로 변환하여 손목 F/T 센서 측정값과 합산함으로써, 스쿠핑 중 손끝 접촉에 로봇 팔이 유연하게 반응하도록 합니다.</span></p>
+</div>
+<div class="columns is-centered" style="margin-top: 1rem;">
+<!-- Left: YouTube Shorts -->
+<div class="column">
+<div class="publication-video">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" id="sensor-youtube-1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/eXF3unYd2I0?enablejsapi=1&amp;playsinline=1&amp;mute=1" title="Fingertip contact force / 손끝 접촉력">
+</iframe>
+</div>
+<h2 class="subtitle has-text-centered is-size-6" style="margin-top: 0.6rem;"><span data-language="en" lang="en"><span class="dnerf">Fingertip Contact Force</span>
+                — external forces are measured at each fingertip.</span><span data-language="ko" hidden="" lang="ko"><span class="dnerf">손끝 접촉력</span> — 각 손끝에서 외력을 측정합니다.</span></h2>
+</div>
+<!-- Right: YouTube wide -->
+<div class="column">
+<div class="publication-video">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" id="sensor-youtube-2" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Jit1Lt0djpE?enablejsapi=1&amp;playsinline=1&amp;mute=1" title="Fingertip contact force / 손끝 접촉력">
+</iframe>
+</div>
+<h2 class="subtitle has-text-centered is-size-6" style="margin-top: 0.6rem;"><span data-language="en" lang="en"><span class="dnerf">Fingertip Contact Force</span>
+                — external forces are measured at each fingertip.</span><span data-language="ko" hidden="" lang="ko"><span class="dnerf">손끝 접촉력</span> — 각 손끝에서 외력을 측정합니다.</span></h2>
+</div>
+</div>
+<!-- Math: Force Aggregation -->
+<div class="math-block">
+<h3 class="math-title"><span data-language="en" lang="en">Wrench Aggregation to Wrist Frame</span><span data-language="ko" hidden="" lang="ko">손목 좌표계에서의 힘·토크 합산</span></h3>
+<p class="math-desc"><span data-language="en" lang="en">Each fingertip wrench \(\mathbf{w}_i = (\mathbf{f}_i,\, \boldsymbol{\tau}_i)\) measured in the fingertip
               frame
               is transformed to the wrist frame \(\{W\}\) via the kinematic transform \({}^W T_i\).
-              The rotation matrix \(\mathbf{R}_i\) and position offset \(\mathbf{r}_i\) are obtained from TF.
-            </p>
-
-            <div class="math-eq">
+              The rotation matrix \(\mathbf{R}_i\) and position offset \(\mathbf{r}_i\) are obtained from TF.</span><span data-language="ko" hidden="" lang="ko">각 손끝 좌표계에서 측정한 힘·토크 \(\mathbf{w}_i = (\mathbf{f}_i,\, \boldsymbol{\tau}_i)\)를 기구학적 변환 \({}^W T_i\)를 통해 손목 좌표계 \(\{W\}\)로 변환합니다. 회전행렬 \(\mathbf{R}_i\)와 위치 오프셋 \(\mathbf{r}_i\)는 TF에서 얻습니다.</span></p>
+<div class="math-eq">
               \[
               \mathbf{f}_i^W = \mathbf{R}_i \, \mathbf{f}_i
               \]
             </div>
-            <div class="math-eq">
+<div class="math-eq">
               \[
               \boldsymbol{\tau}_i^W = \mathbf{R}_i \, \boldsymbol{\tau}_i + \mathbf{r}_i \times \mathbf{f}_i^W
               \]
             </div>
-
-            <p class="math-desc" style="margin-top: 0.8rem;">
-              The aggregated wrench at the wrist combines all \(N\) fingertip contributions and
+<p class="math-desc" style="margin-top: 0.8rem;"><span data-language="en" lang="en">The aggregated wrench at the wrist combines all \(N\) fingertip contributions and
               is merged with the physical wrist F/T reading
-              \((\mathbf{f}_\text{wrist},\,\boldsymbol{\tau}_\text{wrist})\):
-            </p>
-
-            <div class="math-eq">
+              \((\mathbf{f}_\text{wrist},\,\boldsymbol{\tau}_\text{wrist})\):</span><span data-language="ko" hidden="" lang="ko">총 \(N\)개 손끝의 기여분을 손목 좌표계에서 합산한 뒤, 실제 손목 F/T 센서 측정값 \((\mathbf{f}_\text{wrist},\,\boldsymbol{\tau}_\text{wrist})\)에 더합니다.</span></p>
+<div class="math-eq">
               \[
               \mathbf{f}_\text{total} = \mathbf{f}_\text{wrist} + \sum_{i=1}^{N} \mathbf{f}_i^W, \qquad
               \boldsymbol{\tau}_\text{total} = \boldsymbol{\tau}_\text{wrist} + \sum_{i=1}^{N} \boldsymbol{\tau}_i^W
               \]
             </div>
-
-            <p class="math-desc" style="margin-top: 0.8rem;">
-              This combined wrench \((\mathbf{f}_\text{total},\, \boldsymbol{\tau}_\text{total})\)
+<p class="math-desc" style="margin-top: 0.8rem;"><span data-language="en" lang="en">This combined wrench \((\mathbf{f}_\text{total},\, \boldsymbol{\tau}_\text{total})\)
               is fed as the external force input to the impedance controller,
               enabling the manipulator to react compliantly to both wrist-level and fingertip-level contacts
-              during the scooping grasping motion.
-            </p>
-          </div>
-
-          <!-- Restore fingertip force transformation mp4 -->
-          <div class="hero-body" style="padding: 0.5rem 0 0.5rem;">
-            <div class="columns is-centered">
-              <div class="column">
-                <video id="fingertip-force" controls muted playsinline preload="none">
-                  <source src="./static/videos/fingertip_force_transformation.mp4" type="video/mp4">
-                </video>
-                <h2 class="subtitle has-text-centered is-size-6">
-                  <span class="dnerf">Fingertip Force Transformation</span>
-                  — the fingertip F/T values are transformed and aggregated to the wrist frame for compliance control.
-                </h2>
-              </div>
-            </div>
-          </div>
-
-          <hr class="divider" style="margin: 1.5rem auto; border: 0; height: 0.5px; background-color: #dbdbdb;">
-
-          <!-- Comparison w/ vs w/o Aggregator -->
-          <div class="content has-text-centered" style="margin-top: 1.5rem;">
-            <h2 class="title is-3">Comparison: w/ vs. w/o Wrist Wrench Aggregator</h2>
-            <p class="is-size-5">
-              The hand's low mechanical stiffness can limit the response to fingertip contact when using wrist
+              during the scooping grasping motion.</span><span data-language="ko" hidden="" lang="ko">합산한 힘·토크 \((\mathbf{f}_\text{total},\, \boldsymbol{\tau}_\text{total})\)를 임피던스 제어기의 외력 입력으로 사용하여, 스쿠핑 중 손목과 손끝에서 발생하는 접촉에 로봇 팔이 유연하게 반응하도록 합니다.</span></p>
+</div>
+<!-- Restore fingertip force transformation mp4 -->
+<div class="hero-body" style="padding: 0.5rem 0 0.5rem;">
+<div class="columns is-centered">
+<div class="column">
+<video aria-labelledby="fingertip-force-caption" controls="" height="1086" id="fingertip-force" muted="" playsinline="" preload="none" style="aspect-ratio: 3120 / 1086;" width="3120"><source src="./static/videos/fingertip_force_transformation.mp4" type="video/mp4"/><a href="./static/videos/fingertip_force_transformation.mp4"><span data-language="en" lang="en">Download video</span><span data-language="ko" hidden="" lang="ko">영상 다운로드</span></a></video>
+<h2 class="subtitle has-text-centered is-size-6" id="fingertip-force-caption"><span data-language="en" lang="en"><span class="dnerf">Fingertip Force Transformation</span>
+                  — the fingertip F/T values are transformed and aggregated to the wrist frame for compliance control.</span><span data-language="ko" hidden="" lang="ko"><span class="dnerf">손끝 힘 변환</span> — 손끝 F/T 값을 손목 좌표계로 변환하고 합산하여 순응 제어에 활용합니다.</span></h2>
+</div>
+</div>
+</div>
+<hr class="divider" style="margin: 1.5rem auto; border: 0; height: 0.5px; background-color: #dbdbdb;"/>
+<!-- Comparison w/ vs w/o Aggregator -->
+<div class="content has-text-centered" style="margin-top: 1.5rem;">
+<h2 class="title is-3"><span data-language="en" lang="en">Comparison: w/ vs. w/o Wrist Wrench Aggregator</span><span data-language="ko" hidden="" lang="ko">비교: 손목 힘·토크 합산 적용 여부</span></h2>
+<p class="is-size-5"><span data-language="en" lang="en">The hand's low mechanical stiffness can limit the response to fingertip contact when using wrist
               feedback alone. Adding the transformed fingertip forces to the wrist feedback helps the
-              manipulator respond more sensitively to floor contact.
-            </p>
-            <p class="is-size-5" style="margin-top: 0.4rem;">
-              <strong>Click on any video to play both simultaneously.</strong>
-            </p>
-          </div>
+              manipulator respond more sensitively to floor contact.</span><span data-language="ko" hidden="" lang="ko">핸드의 낮은 기계적 강성 때문에 손목 피드백만으로는 손끝 접촉에 민감하게 반응하기 어려울 수 있습니다. 변환한 손끝 힘을 손목 피드백에 더하면 바닥 접촉에 더 민감하게 반응할 수 있습니다.</span></p>
 
-          <section class="hero teaser">
-            <div class="hero-body" style="padding: 0.5rem 0 1.5rem;">
-              <div class="columns is-centered">
-                <div class="column">
-                  <video id="comparison1-without" muted playsinline preload="none">
-                    <source src="./static/videos/comparison1_without_impedance.mp4" type="video/mp4">
-                  </video>
-                  <h2 class="subtitle has-text-centered is-size-6">
-                    <span class="dnerf">Without Aggregator</span>
-                    — fingertip forces are not reflected to the wrist; the hand cannot react to contact sensitively.
-                  </h2>
-                </div>
-                <div class="column">
-                  <video id="comparison1-with" muted playsinline preload="none">
-                    <source src="./static/videos/comparison1_with_impedance.mp4" type="video/mp4">
-                  </video>
-                  <h2 class="subtitle has-text-centered is-size-6">
-                    <span class="dnerf">With Aggregator</span>
-                    — aggregated fingertip wrench at the wrist enables sensitive, compliant scooping from the floor.
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </section>
-
-        </div><!-- /principle-content -->
-      </details>
-    </div>
-  </section>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link external-link" href="https://github.com/r-ush">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
+<button class="button is-light" id="restart-comparison" type="button"><span data-language="en" lang="en">Restart comparison</span><span data-language="ko" hidden="" lang="ko">비교 영상 처음부터 재생</span></button></div>
+<section class="hero teaser">
+<div class="hero-body" style="padding: 0.5rem 0 1.5rem;">
+<div class="columns is-centered">
+<div class="column">
+<video aria-labelledby="comparison1-without-caption" controls="" height="720" id="comparison1-without" muted="" playsinline="" preload="none" style="aspect-ratio: 960 / 720;" width="960"><source src="./static/videos/comparison1_without_impedance.mp4" type="video/mp4"/><a href="./static/videos/comparison1_without_impedance.mp4"><span data-language="en" lang="en">Download video</span><span data-language="ko" hidden="" lang="ko">영상 다운로드</span></a></video>
+<h2 class="subtitle has-text-centered is-size-6" id="comparison1-without-caption"><span data-language="en" lang="en"><span class="dnerf">Without Aggregator</span>
+                    — fingertip forces are not reflected to the wrist; the hand cannot react to contact sensitively.</span><span data-language="ko" hidden="" lang="ko"><span class="dnerf">합산 미적용</span> — 손끝 힘이 손목에 반영되지 않아 접촉에 민감하게 반응하기 어렵습니다.</span></h2>
+</div>
+<div class="column">
+<video aria-labelledby="comparison1-with-caption" controls="" height="720" id="comparison1-with" muted="" playsinline="" preload="none" style="aspect-ratio: 960 / 720;" width="960"><source src="./static/videos/comparison1_with_impedance.mp4" type="video/mp4"/><a href="./static/videos/comparison1_with_impedance.mp4"><span data-language="en" lang="en">Download video</span><span data-language="ko" hidden="" lang="ko">영상 다운로드</span></a></video>
+<h2 class="subtitle has-text-centered is-size-6" id="comparison1-with-caption"><span data-language="en" lang="en"><span class="dnerf">With Aggregator</span>
+                    — aggregated fingertip wrench at the wrist enables sensitive, compliant scooping from the floor.</span><span data-language="ko" hidden="" lang="ko"><span class="dnerf">합산 적용</span> — 손끝 힘·토크를 손목에 반영하여 바닥에서 유연하게 스쿠핑합니다.</span></h2>
+</div>
+</div>
+</div>
+</section>
+</div><!-- /principle-content -->
+</details>
+</div>
+</section>
+<footer class="footer">
+<div class="container">
+<div class="content has-text-centered">
+<a class="icon-link external-link" href="https://github.com/r-ush">
+<i class="fab fa-github"></i>
+</a>
+</div>
+<div class="columns is-centered">
+<div class="column is-8">
+<div class="content">
+<p><span data-language="en" lang="en">Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a></span><span data-language="ko" hidden="" lang="ko">웹사이트 템플릿: <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a></span></p>
+</div>
+</div>
+</div>
+</div>
+</footer>
 </body>
-
 </html>

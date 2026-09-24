@@ -2,6 +2,44 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+[hidden] { display: none !important; }
+html[lang="ko"] body { word-break: keep-all; overflow-wrap: anywhere; }
+html[lang="ko"] body,
+html[lang="ko"] .publication-title,
+html[lang="ko"] .principle-label,
+html[lang="ko"] .math-desc {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+html[lang="ko"] .publication-title { word-break: keep-all; overflow-wrap: normal; }
+html[lang="ko"] .has-text-justified { text-align: left !important; }
+.navbar { min-height: 3.5rem; }
+.navbar-brand .navbar-burger { margin-left: 0; border: 0; background: transparent; }
+.language-switch {
+  position: absolute;
+  right: 1rem;
+  top: 0.65rem;
+  z-index: 30;
+  display: flex;
+  padding: 3px;
+  gap: 2px;
+  border: 1px solid #dbdbdb;
+  border-radius: 999px;
+  background: #fff;
+}
+.language-switch button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  background: transparent;
+  color: #555;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.language-switch button[aria-pressed="true"] { background: #363636; color: #fff; }
+.language-switch button:focus-visible { outline: 2px solid #209cee; outline-offset: 2px; }
+
 
 .footer .icon-link {
     font-size: 25px;

@@ -11,11 +11,13 @@ The page presents Main Demo and Data Collection chapters, followed by three coll
 
 The additional technique compensates for low hand mechanical stiffness by transforming fingertip wrenches into the wrist frame and adding them to wrist force feedback for the manipulator's compliance controller.
 
-## Preview videos
+## Videos and language
 
-The three new videos are temporary edits. Web copies are stored in `static/videos/` under their original filenames; the source recordings remain unchanged. These copies use H.264/AAC with MP4 fast start. The HDR black object collection recording is tone-mapped to SDR for browser compatibility.
+Main Demo uses the final diffusion policy rollout. Data Collection uses the final combined collection video. The web copies use H.264/AAC with MP4 fast start; the HDR collection source is tone-mapped to SDR.
 
-When the edits are finalized, replace the corresponding web copies and regenerate their matching JPEG posters in `static/images/`. Remove the preview notices in `index.html` when appropriate.
+Videos play muted when visible, pause outside the viewport or in a closed section, and pause while the browser tab is hidden. Native playback controls remain available. EN/KR switches the page text without reloading media; English is the default, and an explicit language choice is remembered.
+
+The media history was compacted to retain only the current web videos. Previous repository history is backed up separately before the rewrite.
 
 ## Website
 

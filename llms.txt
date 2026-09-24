@@ -4,12 +4,12 @@
 
 ## Overview
 
-This project presents diffusion policy rollouts and grasping data collection with an AIDIN Robotics hand. The current rollout and data collection videos are preview edits.
+This project presents diffusion policy rollouts and grasping data collection with an AIDIN Robotics hand. The page includes final rollout and combined data collection videos, with English and Korean text.
 
 ## Page Sections
 
 1. **Main Demo**: Diffusion policy rollout for black object grasping.
-2. **Data Collection**: Black object grasping demonstrations and parallel collection views.
+2. **Data Collection**: Compliance control absorbs contact impacts to reduce operator workload and simplify data collection.
 3. **Principle**: Original scooping and book grasping videos showing compliant surface contact.
 4. **Comparison**: Scooping with and without compliance control.
 5. **Additional Technique**: Fingertip force feedback compensates for the hand's low mechanical stiffness. Fingertip wrenches are transformed into the wrist frame and combined with the wrist force/torque sensor reading as input to the manipulator's compliance controller.
