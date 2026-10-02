@@ -1,5 +1,5 @@
 import { t } from './i18n.js?v=15';
-import { initMechanism } from './mechanism.js?v=15';
+import { initMechanism } from './mechanism.js?v=autoplay-2';
 import * as THREE from 'three';
 import { OrbitControls } from 'https://esm.sh/three@0.160.1/examples/jsm/controls/OrbitControls.js';
 import { STLLoader } from 'https://esm.sh/three@0.160.1/examples/jsm/loaders/STLLoader.js';
@@ -23,7 +23,6 @@ async function json(url) {
   }
   return data;
 }
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const pairs = [];
 const deg = value => (value * 180 / Math.PI).toFixed(1);
 
@@ -108,7 +107,7 @@ function syncViews(views) {
 function setupPair(kind, data) {
   const views = [makeView(`${kind}-off`, kind), makeView(`${kind}-on`, kind)];
   syncViews(views);
-  const pair = {kind, data, views, currentCase: 0, frame: 0, elapsed: 0, ready: false, visible: false, playing: !reducedMotion, last: performance.now()};
+  const pair = {kind, data, views, currentCase: 0, frame: 0, elapsed: 0, ready: false, visible: false, playing: true, last: performance.now()};
   const maxFrame = data.cases[0].variants[0].poses.length - 1;
   const time = $(`${kind}-time`); time.max = maxFrame;
   $(`${kind}-play`).onclick = () => {
@@ -390,6 +389,7 @@ $('rollout-frame').addEventListener('load', () => {
 });
 const families = [ {name: '팔각기둥', envs: [4, 6]}, {name: '납작한 사과', envs: [1, 3]}, {name: '원뿔대', envs: [2, 5]}, {name: '세운 원통', envs: [0, 7]} ];
 let rolloutRequest = 0;
+let rolloutFetch;
 function refreshRolloutLabels() {
   const index = Number($('family-select').value), family = families[index];
   document.querySelectorAll('[data-family]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.family) === index)));
@@ -414,6 +414,8 @@ document.querySelectorAll('[data-family]').forEach(button => button.onclick = ()
 });
 async function updateRollout() {
   const request = ++rolloutRequest;
+  rolloutFetch?.abort();
+  rolloutFetch = new AbortController();
   refreshRolloutLabels();
   const family = families[Number($('family-select').value)];
   const epoch = $('epoch-select').value;
@@ -425,7 +427,7 @@ async function updateRollout() {
   $('open-viewer').href = url;
   $('rollout-frame').title = t('rolloutTitle',{name:t(family.name),epoch,env});
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {signal: rolloutFetch.signal});
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     let html = await response.text();
     if (request !== rolloutRequest) return;
@@ -491,6 +493,20 @@ async function updateRollout() {
     html = html.replace('</head>', `<link rel="stylesheet" href="${viewerTheme}"></head>`);
     html = html.replace('<head>', `<head><base href="${base}">`)
       .replaceAll('window.location.href', 'document.baseURI');
+    // Start only after the scene is ready, and resume after viewport / tab changes.
+    // This loop never changes a user's explicit Pause or timeline selection.
+    const playbackModule = new URL('rollout-playback.js?v=autoplay-2', location.href).href;
+    html = html.replace('<script type="module">', `<script type="module">\nimport { createRolloutPlayback } from '${playbackModule}';`)
+      .replaceAll('requestAnimationFrame(animate);', 'projectPlayback.schedule();')
+      .replace('setPlaying(sceneConfig.autoplay ?? !hasJointControl);', 'setPlaying(true);\n          projectPlayback.start();')
+      .replace('const elapsed = (nowMs - playbackStartTimeMs) / 1000;', 'const elapsed = Math.max(0, (nowMs - playbackStartTimeMs) / 1000);')
+      .replace('      initScene();', `
+      const projectPlayback = createRolloutPlayback({renderer, controls, animate,
+        resetClock: () => { playbackStartTimeMs = performance.now(); playbackStartFrame = currentFrame; }
+      });
+      window.projectPagePlayback = projectPlayback;
+      initScene();`);
+    $('rollout-frame').contentWindow?.projectPagePlayback?.dispose();
     $('rollout-frame').srcdoc = html;
   } catch (error) {
     if (request !== rolloutRequest) return;

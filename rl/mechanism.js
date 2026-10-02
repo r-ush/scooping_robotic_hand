@@ -22,7 +22,7 @@ export async function initMechanism(loadGeometry) {
   const floor=new THREE.Mesh(new THREE.PlaneGeometry(1,1),new THREE.MeshStandardMaterial({color:0xeeeeee,roughness:1}));
   floor.position.set(.12,.34,-.001);scene.add(floor);
   const grid=new THREE.GridHelper(1,30,0xcccccc,0xdddddd);grid.rotation.x=Math.PI/2;grid.position.set(.12,.34,0);scene.add(grid);
-  let dirty=true,playing=!matchMedia('(prefers-reduced-motion: reduce)').matches,visible=false,last=performance.now(),elapsed=0,frame=0;
+  let dirty=true,playing=true,visible=false,last=performance.now(),elapsed=0,frame=0;
   let finger='index',scenario='low',current;
   function fit(){controls.target.set(.12,.34,.19);camera.position.set(.23,-.43,.44);controls.update();dirty=true;}
   fit(); controls.addEventListener('change',()=>{dirty=true;});

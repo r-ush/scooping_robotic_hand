@@ -40,6 +40,12 @@ Both approaches use the NeRFies publication theme with shared Bulma, English
 fonts, Korean Pretendard, and research navigation. The RL page keeps its Three.js
 viewers and controls; `rl/viewer-theme.css` styles the embedded rollout controls.
 
+Recorded RL demonstrations autoplay when visible, including when the operating
+system requests reduced decorative motion. Playback suspends outside the viewport
+or in a hidden tab and resumes on return, preserving any explicit Pause or scrub.
+`rl/rollout-playback.js` manages the embedded viewer lifecycle and releases its
+WebGL context before a different recording replaces it.
+
 [Open the RL page](https://r-ush.github.io/scooping_robotic_hand/rl/).
 
 For a local preview, run `python ~/webpages/preview.py`, then open
