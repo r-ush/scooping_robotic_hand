@@ -1,0 +1,942 @@
+{
+  "copy0": {
+    "en": "Joints",
+    "ko": "관절 비교"
+  },
+  "copy1": {
+    "en": "Mechanism",
+    "ko": "구동 기구"
+  },
+  "copy2": {
+    "en": "Contact pads",
+    "ko": "패드 비교"
+  },
+  "copy3": {
+    "en": "System",
+    "ko": "시스템"
+  },
+  "copy4": {
+    "en": "See model differences",
+    "ko": "모델의 차이를,"
+  },
+  "copy5": {
+    "en": "through motion.",
+    "ko": "움직임으로 확인합니다."
+  },
+  "copy6": {
+    "en": "Explore joint boundaries and contact behavior.",
+    "ko": "관절 범위와 접촉 특성을 살펴봅니다."
+  },
+  "copy7": {
+    "en": "Replay synchronized 3D comparisons using the actual models.",
+    "ko": "실제 모델의 적용 전후를 동기화된 3D 실험으로 비교합니다."
+  },
+  "copy8": {
+    "en": "Original STL / MJCF assets",
+    "ko": "실제 STL / MJCF"
+  },
+  "copy9": {
+    "en": "MuJoCo simulated trajectories",
+    "ko": "MuJoCo 물리 계산 궤적"
+  },
+  "copy10": {
+    "en": "Synced replay · Orbit · Frame scrub",
+    "ko": "동기 재생 · 시점 회전 · 프레임 탐색"
+  },
+  "copy11": {
+    "en": "One finger tracing",
+    "ko": "한 손가락으로 따라가는"
+  },
+  "copy12": {
+    "en": "the joint workspace.",
+    "ko": "관절 범위의 경계."
+  },
+  "copy13": {
+    "en": "Move the index finger or thumb.",
+    "ko": "엄지 또는 검지만 선택해 움직입니다."
+  },
+  "copy14": {
+    "en": "Overlay fingertip trajectories from independent joint limits",
+    "ko": "사각 관절 범위와 실제 도달 테이블 경계의"
+  },
+  "copy15": {
+    "en": "and the existing reachability table.",
+    "ko": "손끝 궤적을 겹쳐서 확인합니다."
+  },
+  "copy16": {
+    "en": "Index",
+    "ko": "검지"
+  },
+  "copy17": {
+    "en": "Thumb",
+    "ko": "엄지"
+  },
+  "copy18": {
+    "en": "Overlay",
+    "ko": "겹쳐 보기"
+  },
+  "copy19": {
+    "en": "Side by side",
+    "ko": "나란히 보기"
+  },
+  "copy20": {
+    "en": " Show contact pads",
+    "ko": " 실제 패드 영역 표시"
+  },
+  "copy21": {
+    "en": "Reset view ↺",
+    "ko": "시점 초기화 ↺"
+  },
+  "copy22": {
+    "en": "The index finger smoothly traces each joint boundary. Other fingers stay open. Lines show the simulated fingertip trajectories.",
+    "ko": "검지만 각 조건의 관절 범위 경계를 부드럽게 순회합니다. 다른 손가락은 펼친 자세로 유지합니다. 선은 계산된 실제 손끝 궤적입니다."
+  },
+  "copy23": {
+    "en": "● OFF · Translucent red",
+    "ko": "● OFF · 반투명 빨강"
+  },
+  "copy24": {
+    "en": "● ON · Green",
+    "ko": "● ON · 초록"
+  },
+  "copy25": {
+    "en": "Same position · Shared camera",
+    "ko": "동일 위치 · 동일 시점"
+  },
+  "copy26": {
+    "en": "Overlaying both models…",
+    "ko": "두 모델을 겹치는 중…"
+  },
+  "copy27": {
+    "en": "Reach constraint disabled",
+    "ko": "도달 제약 미적용"
+  },
+  "copy28": {
+    "en": "Directions synchronized",
+    "ko": "대응 방향 동기화"
+  },
+  "copy29": {
+    "en": "Loading original hand meshes…",
+    "ko": "실제 손 메시를 불러오는 중…"
+  },
+  "copy30": {
+    "en": "Preparing MuJoCo recording",
+    "ko": "MuJoCo 기록 준비 중"
+  },
+  "copy31": {
+    "en": "Reach constraint enabled",
+    "ko": "도달 제약 적용"
+  },
+  "copy32": {
+    "en": "Directions synchronized",
+    "ko": "대응 방향 동기화"
+  },
+  "copy33": {
+    "en": "Loading original hand meshes…",
+    "ko": "실제 손 메시를 불러오는 중…"
+  },
+  "copy34": {
+    "en": "Preparing MuJoCo recording",
+    "ko": "MuJoCo 기록 준비 중"
+  },
+  "copy35": {
+    "en": "Play ▶",
+    "ko": "재생 ▶"
+  },
+  "copy36": {
+    "en": "Drag to orbit · Scroll to zoom / Cameras synchronized",
+    "ko": "드래그: 회전 · 스크롤: 확대 / 시점 동기화"
+  },
+  "copy37": {
+    "en": "Independent limits and reachability boundary",
+    "ko": "사각 범위와 실제 도달 경계"
+  },
+  "copy38": {
+    "en": "Gray dashed: independent simulation joint limits",
+    "ko": "회색 점선: 독립 관절 한계 · 사각 범위"
+  },
+  "copy39": {
+    "en": "Gray area: existing reachability table",
+    "ko": "회색 영역: 기존 도달 범위 테이블"
+  },
+  "copy40": {
+    "en": "Red / green: recorded OFF / ON joint paths",
+    "ko": "빨강 / 초록: OFF / ON 실제 관절 경로"
+  },
+  "copy41": {
+    "en": "3D lines: fingertip paths from the same recording",
+    "ko": "3D 선: 같은 기록에서 계산된 실제 손끝 경로"
+  },
+  "copy42": {
+    "en": "ON smooths small variations in the existing reachability boundary. Both loops share the same phase through bottom, right, top and left. Joint angles can differ because their boundaries differ.",
+    "ko": "ON은 기존 도달 테이블의 잔굴곡을 스무딩한 경로입니다. 두 경계의 아래·오른쪽·위·왼쪽 방향을 같은 위상으로 맞춥니다. 범위 차이로 관절 각도는 다를 수 있습니다."
+  },
+  "copy43": {
+    "en": "MuJoCo 3.3.7 · Gravity / contact OFF · 500 Hz physics / 50 Hz replay",
+    "ko": "MuJoCo 3.3.7 · 중력/접촉 OFF · 500 Hz physics / 50 Hz replay"
+  },
+  "copy44": {
+    "en": "Selected finger only · PIP command 0° · DIP coupling retained in both",
+    "ko": "선택한 손가락만 구동 · PIP 명령 0° · DIP 연동은 양쪽 유지"
+  },
+  "copy45": {
+    "en": "Comparison conditions and sources",
+    "ko": "비교 조건과 데이터 출처"
+  },
+  "copy46": {
+    "en": "Each finger continuously traces its boundary in a 12-second cycle. OFF follows the independent roll and pitch limits of the current simulation MJCF, with rounded corners. ON follows a periodically smoothed reachability boundary, adjusted inward to stay within the original table. The commands differ because the boundaries differ. Fingertip paths are MuJoCo results, not new hardware measurements. All other finger commands and the selected PIP command stay at zero; DIP coupling remains enabled in both.",
+    "ko": "검지·엄지 각각 12초 주기로 관절 범위 경계를 연속 순회합니다. OFF는 현재 시뮬레이션 MJCF의 독립 roll·pitch 한계가 만드는 사각 범위이며, 모서리만 부드럽게 돌도록 합니다. ON은 기존 도달 테이블의 경계를 주기 필터로 스무딩하고 원래 범위 안쪽으로 조정합니다. 서로 다른 경계를 보여주므로 입력도 다릅니다. 실제 손끝 궤적은 이 명령을 MuJoCo로 실행한 결과이며 새로 측정한 실기 경로는 아닙니다. 선택하지 않은 손가락의 명령은 모두 0입니다. PIP는 0으로 유지하고 DIP 연동도 양쪽에 그대로 둡니다."
+  },
+  "copy47": {
+    "en": "Both conditions use the source MuJoCo gains, inertia and finger meshes, with gravity and contact disabled. Three warmup cycles precede the recorded steady cycle, allowing continuous replay without jumps. Lines use fingertip site positions from mj_step, with no post-processing of the resulting poses. Housing meshes come from the project URDF. This is not an Isaac policy or hardware performance comparison.",
+    "ko": "원본 MuJoCo 모델의 구동 게인·관성·손가락 메시를 사용하며 중력과 접촉은 양쪽 모두 끕니다. 3회 예열 순회 후의 정상 주기 기록을 사용해 반복 경계에서도 멈추거나 초기 자세로 튀지 않습니다. 선은 실제 mj_step의 손끝 site 기록이며, 결과 좌표 자체를 보정하지 않습니다. 하우징은 프로젝트 URDF의 원본 시각 메시입니다. Isaac 정책이나 실기 성능 비교가 아닙니다."
+  },
+  "copy48": {
+    "en": "Trajectories · Source hashes ↗",
+    "ko": "궤적 · 원본 해시 ↗"
+  },
+  "copy49": {
+    "en": "Two sliders create motion.",
+    "ko": "두 슬라이더가 만드는 움직임,"
+  },
+  "copy50": {
+    "en": "Their limits shape the reach.",
+    "ko": "그리고 도달 범위의 끝."
+  },
+  "copy51": {
+    "en": "Common motion produces pitch; a difference produces roll.",
+    "ko": "같이 움직이면 pitch, 차이가 나면 roll."
+  },
+  "copy52": {
+    "en": "An original finger mounted at the mechanism output",
+    "ko": "기구 출력축에 원본 손가락을 붙여"
+  },
+  "copy53": {
+    "en": "shows when commands reach the model limits.",
+    "ko": "명령이 제한되는 순간을 확인합니다."
+  },
+  "copy54": {
+    "en": "Index",
+    "ko": "검지"
+  },
+  "copy55": {
+    "en": "Thumb",
+    "ko": "엄지"
+  },
+  "copy56": {
+    "en": "Extended",
+    "ko": "펴진 쪽"
+  },
+  "copy57": {
+    "en": "Middle",
+    "ko": "중간"
+  },
+  "copy58": {
+    "en": "Flexed",
+    "ko": "굽힌 쪽"
+  },
+  "copy59": {
+    "en": "Reset view ↺",
+    "ko": "시점 초기화 ↺"
+  },
+  "copy60": {
+    "en": "Left · AIDIN hand / Reached pose",
+    "ko": "왼쪽 · AIDIN 손 / 도달 자세"
+  },
+  "copy61": {
+    "en": "Right · Mechanism + original finger / 1×",
+    "ko": "오른쪽 · 기구 + 원본 손가락 / 1배"
+  },
+  "copy62": {
+    "en": "Loading mechanism model…",
+    "ko": "기구 모델을 불러오는 중…"
+  },
+  "copy63": {
+    "en": "Blue d₁ · Purple d₂: LM block positions",
+    "ko": "파랑 d₁ · 보라 d₂: LM 블록 위치"
+  },
+  "copy64": {
+    "en": "Green: crank · Red outline: requested position",
+    "ko": "초록: 크랭크 · 빨강 윤곽: 요청 위치"
+  },
+  "copy65": {
+    "en": "Ochre: modeled travel endpoints",
+    "ko": "황토색: 모델의 이동 범위 끝"
+  },
+  "copy66": {
+    "en": "Play ▶",
+    "ko": "재생 ▶"
+  },
+  "copy67": {
+    "en": "Drag to orbit · Scroll to zoom",
+    "ko": "드래그: 회전 · 스크롤: 확대"
+  },
+  "copy68": {
+    "en": "Mechanism sources and scope",
+    "ko": "기구를 구성한 근거와 설명 범위"
+  },
+  "copy69": {
+    "en": "Pivots, attachment points and rod lengths are reconstructed from the vendor kinematic dimensions and equations. LM guide, block and support shapes are illustrative. The original four finger links are mounted at the MCP output pivot after aligning mechanism and URDF coordinates. The hand and mounted finger share the same orientation and joint motion. This placement is explanatory, not a reconstruction of measured internal mounting CAD.",
+    "ko": "피벗·연결점·연결봉 길이는 벤더 운동학 코드의 치수와 식으로 재구성했습니다. LM 가이드·블록·지지대의 외형과 배치는 설명용이며 내부 CAD를 복원한 것은 아닙니다. 기구와 URDF의 좌표축을 맞추고, 선택한 원본 손가락 4개 링크를 MCP 출력 회전축에 배치했습니다. 왼쪽 손과 오른쪽 손가락은 같은 방향·관절 자세로 움직입니다. 이 배치는 실측 내부 장착 CAD를 의미하지 않습니다."
+  },
+  "copy70": {
+    "en": "The existing constraint model includes slider stroke, differential travel and the valid kinematic domain. These limits do not all imply physical collisions at the LM guide ends. The differential envelope comes from earlier right-hand logs; its correspondence to physical interference in the current left hand is unverified. This view uses left-hand calibration for a kinematic explanation. Physical dimensions and interference require separate validation.",
+    "ko": "두 슬라이더의 이동 범위, 위치 차이 제한, 기구학 계산의 유효 영역을 포함한 기존 제약 모델을 사용합니다. 모든 제한을 실제 LM 가이드의 끝단 충돌로 단정하지 않습니다. 변위 차이의 포락선은 과거 오른손 로그에 기반하므로 현재 왼손의 실제 간섭 한계와 동일하다고 확정하지 않습니다. 이 뷰는 왼손 보정값을 사용한 운동학 설명이며, 실물 치수와 물리적 간섭 검증은 별도입니다."
+  },
+  "copy71": {
+    "en": "Dimensions · Calculated motion · Sources ↗",
+    "ko": "기구 치수 · 계산 기록 · 출처 ↗"
+  },
+  "copy72": {
+    "en": "Drop onto an open hand.",
+    "ko": "펼친 손 위에 떨어뜨리고,"
+  },
+  "copy73": {
+    "en": "Compare holding and sliding.",
+    "ko": "유지와 미끄러짐을 비교합니다."
+  },
+  "copy74": {
+    "en": "Keep the palm and all five fingers open.",
+    "ko": "손바닥과 다섯 손가락을 모두 펼칩니다."
+  },
+  "copy75": {
+    "en": "Release the same large object from the same height,",
+    "ko": "같은 큰 물체를 같은 높이에서 떨어뜨린 뒤,"
+  },
+  "copy76": {
+    "en": "and compare contact pads at the selected inclination.",
+    "ko": "선택한 기울기에서 패드 적용 전후를 비교합니다."
+  },
+  "copy77": {
+    "en": "−15° · Default",
+    "ko": "−15° · 기본"
+  },
+  "copy78": {
+    "en": "250 g · 130 × 140 × 25 mm · Vertical drop 35 mm",
+    "ko": "250 g · 130 × 140 × 25 mm · 수직 낙하 35 mm"
+  },
+  "copy79": {
+    "en": "Reset view ↺",
+    "ko": "시점 초기화 ↺"
+  },
+  "copy80": {
+    "en": "The entire hand stays open (q=0), fixed at the selected angle from the start; the default is −15°. The object is centered over the middle and distal segments of the four fingers, with its base parallel to the hand. Both conditions share the same palm and finger collision shells. ON adds 15 pad colliders and high-friction material.",
+    "ko": "손 전체를 열린 자세(q=0)로 펼치고, 처음부터 선택한 각도로 기울여 고정합니다. 기본은 −15°입니다. 물체는 네 손가락의 중간·끝마디 영역을 중심으로 놓고, 밑면을 손의 기울기에 맞춰 떨어뜨립니다. 손바닥·손가락의 기본 충돌 형상은 같고, ON에만 15개 패드 충돌체와 고마찰 재질을 추가합니다."
+  },
+  "copy81": {
+    "en": "Pads disabled",
+    "ko": "패드 미적용"
+  },
+  "copy82": {
+    "en": "Shell μ 0.25",
+    "ko": "셸 μ 0.25"
+  },
+  "copy83": {
+    "en": "Loading simulated trajectories…",
+    "ko": "물리 계산 궤적을 불러오는 중…"
+  },
+  "copy84": {
+    "en": "Preparing recording",
+    "ko": "기록 준비 중"
+  },
+  "copy85": {
+    "en": "Pads enabled",
+    "ko": "패드 적용"
+  },
+  "copy86": {
+    "en": "Pads μ 1.50",
+    "ko": "패드 μ 1.50"
+  },
+  "copy87": {
+    "en": "Loading simulated trajectories…",
+    "ko": "물리 계산 궤적을 불러오는 중…"
+  },
+  "copy88": {
+    "en": "Preparing recording",
+    "ko": "기록 준비 중"
+  },
+  "copy89": {
+    "en": "Play ▶",
+    "ko": "재생 ▶"
+  },
+  "copy90": {
+    "en": "Original hand model · Green: 15 pads · Orange: dropped object",
+    "ko": "원본 손 모델 · 녹색: 15개 패드 · 주황: 낙하 물체"
+  },
+  "copy91": {
+    "en": "Default −15° · Fixed inclination → 6 s after release",
+    "ko": "기본 −15° · 선택한 기울기 고정 → 낙하 후 6 s 관찰"
+  },
+  "copy92": {
+    "en": "A floor contact counts as a fall",
+    "ko": "바닥 접촉 시 낙하로 판정"
+  },
+  "copy93": {
+    "en": "Reading experiment results…",
+    "ko": "실험 결과를 읽는 중…"
+  },
+  "copy94": {
+    "en": "Experiment scope and all conditions",
+    "ko": "실험 범위 · 모든 조건의 결과"
+  },
+  "copy95": {
+    "en": "This passive drop-and-support test fixes the original left palm and five fingers in the open pose (q=0). Initial object pose, mass, clearance, gravity and hand motion are identical. Only ON adds the original 15 convex pad hulls and high-friction material. The experiment does not test active grasping or physical joint compliance.",
+    "ko": "실제 왼손 모델의 손바닥과 다섯 손가락을 모두 열린 자세(q=0)로 고정한 낙하·지지 시험입니다. 물체의 초기 자세·질량·낙하 여유·중력·손의 동작은 양쪽이 같습니다. ON만 원본 15개 패드 convex hull과 고마찰 재질을 추가합니다. 손을 능동적으로 닫아 잡는 파지나 실제 관절의 유연성을 검증하는 시험은 아닙니다."
+  },
+  "copy96": {
+    "en": "MuJoCo uses its default friction combination rule (shell–object 0.5, pad–object 1.5); contact calculations differ from Isaac/PhysX. An object is marked retained if it avoids the floor for 6 seconds and ends in contact with the hand with its center above 100 mm.",
+    "ko": "MuJoCo의 기본 마찰 결합 규칙을 사용합니다(셸–물체 0.5, 패드–물체 1.5). Isaac/PhysX와 동일한 접촉 계산은 아닙니다. 6초 동안 바닥에 닿지 않고, 마지막에 손 접촉과 물체 중심 높이 100 mm 초과를 유지하면 ‘유지’로 표시합니다."
+  },
+  "copy97": {
+    "en": "Trajectories · Contacts · Source hashes ↗",
+    "ko": "궤적 · 접촉 기록 · 원본 해시 ↗"
+  },
+  "copy98": {
+    "en": "Training and robot execution.",
+    "ko": "학습과 실제 로봇 실행."
+  },
+  "copy99": {
+    "en": "Bring robot geometry and contact conditions into training.",
+    "ko": "로봇 모델과 접촉 조건을 학습에 반영하고,"
+  },
+  "copy100": {
+    "en": "Connect object estimates and joint feedback to the policy.",
+    "ko": "물체 추정과 관절 피드백을 정책 입력으로 연결합니다."
+  },
+  "copy101": {
+    "en": "SIMULATION / TRAINING",
+    "ko": "SIMULATION / 학습"
+  },
+  "copy102": {
+    "en": "AIDIN model · Contact pads",
+    "ko": "AIDIN 모델 · 접촉 패드"
+  },
+  "copy103": {
+    "en": "Measured table · 20 mm spacer",
+    "ko": "실측 테이블 · 20 mm 스페이서"
+  },
+  "copy104": {
+    "en": "Reinforcement learning",
+    "ko": "강화학습"
+  },
+  "copy105": {
+    "en": "Object, hand and goal observations",
+    "ko": "물체·손·목표 관측"
+  },
+  "copy106": {
+    "en": "Grasp, lift and sustained support rewards",
+    "ko": "파지 · 리프트 · 지속 지지 보상"
+  },
+  "copy107": {
+    "en": "Policy + training config",
+    "ko": "정책 + 학습 설정"
+  },
+  "copy108": {
+    "en": "Preserved checkpoints",
+    "ko": "체크포인트 보존"
+  },
+  "copy109": {
+    "en": "Rollout evaluation under matching conditions",
+    "ko": "동일 조건 rollout 평가"
+  },
+  "copy110": {
+    "en": "↓ 131 observations / 21 actions · Robot profile and normalization",
+    "ko": "↓   관측 131차원 / 액션 21차원   ·   로봇 프로파일과 정규화 설정"
+  },
+  "copy111": {
+    "en": "REAL WORLD / EXECUTION",
+    "ko": "REAL WORLD / 실기 실행"
+  },
+  "copy112": {
+    "en": "Build observations",
+    "ko": "관측 구성"
+  },
+  "copy113": {
+    "en": "Object pose + Robot joint feedback",
+    "ko": "물체 자세 + 로봇 관절 피드백"
+  },
+  "copy114": {
+    "en": "Policy inference",
+    "ko": "정책 추론"
+  },
+  "copy115": {
+    "en": "Relative object and goal observations",
+    "ko": "물체·목표의 상대 관측"
+  },
+  "copy116": {
+    "en": "60 Hz execution configuration",
+    "ko": "60 Hz 실행 설정"
+  },
+  "copy117": {
+    "en": "ROS bridge · Target limits",
+    "ko": "ROS bridge · 목표값 제한"
+  },
+  "copy118": {
+    "en": "6 arm + 15 hand joints → Joint feedback",
+    "ko": "팔 6 + 손 15 → 관절 피드백"
+  },
+  "copy119": {
+    "en": "Initial hardware execution used the ep50k policy. The ep100k results below are simulation recordings. Deploying the latest policy and measuring repeated hardware success remain future work.",
+    "ko": "초기 실기 실행은 ep50k 정책입니다. 아래 ep100k 결과는 시뮬레이션 기록이며, 최신 정책의 실기 적용 및 반복 성공률 평가는 후속 단계입니다."
+  },
+  "copy120": {
+    "en": "Four object families.",
+    "ko": "네 가지 물체의"
+  },
+  "copy121": {
+    "en": "Replay the learned behavior.",
+    "ko": "실제 학습 결과를 재생합니다."
+  },
+  "copy122": {
+    "en": "4 families · 8 training assets total",
+    "ko": "4개 계열 · 총 8개 학습 자산"
+  },
+  "copy123": {
+    "en": "80k / 90k / 100k × 2 environments per family",
+    "ko": "80k / 90k / 100k × 계열별 2개 환경"
+  },
+  "copy124": {
+    "en": "24 saved rollouts · 600 steps each",
+    "ko": "24개 저장 rollout · 각 600 steps"
+  },
+  "copy125": {
+    "en": "Object ",
+    "ko": "물체 "
+  },
+  "copy126": {
+    "en": "Octagonal prism",
+    "ko": "팔각기둥"
+  },
+  "copy127": {
+    "en": "Flat-bottom apple",
+    "ko": "납작한 사과"
+  },
+  "copy128": {
+    "en": "Frustum",
+    "ko": "원뿔대"
+  },
+  "copy129": {
+    "en": "Upright cylinder",
+    "ko": "세운 원통"
+  },
+  "copy130": {
+    "en": "Checkpoint ",
+    "ko": "체크포인트 "
+  },
+  "copy131": {
+    "en": "Environment ",
+    "ko": "환경 "
+  },
+  "copy132": {
+    "en": "Open in new tab ↗",
+    "ko": "새 탭 ↗"
+  },
+  "copy133": {
+    "en": "Current frame state and reward",
+    "ko": "현재 프레임의 상태 · 보상"
+  },
+  "copy134": {
+    "en": "Loading 3D recording…",
+    "ko": "3D 기록을 불러오는 중…"
+  },
+  "copy135": {
+    "en": "View all 24 ↗",
+    "ko": "24개 전체 보기 ↗"
+  },
+  "copy136": {
+    "en": "These saved trajectories are comparisons, not a quantitative study of success rates or generalization to unseen objects.",
+    "ko": "저장된 궤적 비교이며 성공률이나 미관측 물체 일반화의 정량 평가는 아닙니다."
+  },
+  "copy137": {
+    "en": "Scooping Grasping · Reinforcement Learning",
+    "ko": "스쿠핑 파지 · 강화학습"
+  },
+  "attr138": {
+    "en": "Select finger",
+    "ko": "손가락 선택"
+  },
+  "attr139": {
+    "en": "Comparison view",
+    "ko": "비교 보기"
+  },
+  "attr140": {
+    "en": "Joint experiment time",
+    "ko": "관절 실험 시간"
+  },
+  "attr141": {
+    "en": "Selected finger roll–pitch paths and reachability",
+    "ko": "선택한 손가락의 roll–pitch 명령 경로와 도달 범위"
+  },
+  "attr142": {
+    "en": "Mechanism finger",
+    "ko": "기구 손가락 선택"
+  },
+  "attr143": {
+    "en": "Mechanism pose",
+    "ko": "기구 자세 선택"
+  },
+  "attr144": {
+    "en": "Mechanism animation time",
+    "ko": "기구 애니메이션 시간"
+  },
+  "attr145": {
+    "en": "Support inclination",
+    "ko": "지지면 기울기 선택"
+  },
+  "attr146": {
+    "en": "Contact pad experiment time",
+    "ko": "패드 실험 시간"
+  },
+  "attr147": {
+    "en": "Selected object simulation rollout",
+    "ko": "선택한 물체의 시뮬레이션 rollout"
+  },
+  "rangeNote": {
+    "en": "MCP roll: original URDF −30° to +30°; current simulation MJCF −38° to +38°. This replay uses the latter. ON adds the coupled reachability boundary.",
+    "ko": "MCP roll: 원본 URDF는 −30°~+30°, 현재 시뮬레이션 MJCF는 −38°~+38°입니다. 이 재생은 후자의 기록이며, ON에는 관절 결합 도달 제약을 추가합니다."
+  },
+  "objectSelect": {
+    "en": "Select an object",
+    "ko": "물체 선택"
+  },
+  "비교 데이터 형식이 현재 페이지와 맞지 않습니다. 데이터를 다시 생성해주세요.": {
+    "ko": "비교 데이터 형식이 현재 페이지와 맞지 않습니다. 데이터를 다시 생성해주세요.",
+    "en": "The comparison data does not match this page. Rebuild the data."
+  },
+  "일시정지 Ⅱ": {
+    "ko": "일시정지 Ⅱ",
+    "en": "Pause Ⅱ"
+  },
+  "재생 ▶": {
+    "ko": "재생 ▶",
+    "en": "Play ▶"
+  },
+  "낙하 · 바닥 접촉": {
+    "ko": "낙하 · 바닥 접촉",
+    "en": "Fallen · Floor contact"
+  },
+  "손 위 접촉": {
+    "ko": "손 위 접촉",
+    "en": "Hand contact"
+  },
+  "자유 운동": {
+    "ko": "자유 운동",
+    "en": "Free motion"
+  },
+  "검지": {
+    "ko": "검지",
+    "en": "Index"
+  },
+  "엄지": {
+    "ko": "엄지",
+    "en": "Thumb"
+  },
+  "6초 유지": {
+    "ko": "6초 유지",
+    "en": "Retained for 6 s"
+  },
+  "조건": {
+    "ko": "조건",
+    "en": "Condition"
+  },
+  "이 기록에는 상태 정보가 없습니다.": {
+    "ko": "이 기록에는 상태 정보가 없습니다.",
+    "en": "No telemetry is available for this recording."
+  },
+  "프레임 정보를 기다리는 중…": {
+    "ko": "프레임 정보를 기다리는 중…",
+    "en": "Waiting for frame data…"
+  },
+  "상태 패널을 읽지 못했습니다. 같은 서버에서 페이지를 열어주세요.": {
+    "ko": "상태 패널을 읽지 못했습니다. 같은 서버에서 페이지를 열어주세요.",
+    "en": "Cannot read telemetry. Open the page from the same server."
+  },
+  "선택한 기록을 불러오는 중…": {
+    "ko": "선택한 기록을 불러오는 중…",
+    "en": "Loading selected recording…"
+  },
+  "기록의 카메라 초기화 위치를 찾지 못했습니다.": {
+    "ko": "기록의 카메라 초기화 위치를 찾지 못했습니다.",
+    "en": "Cannot locate the recording camera initialization."
+  },
+  "물체 표면의 초기화 위치를 찾지 못했습니다.": {
+    "ko": "물체 표면의 초기화 위치를 찾지 못했습니다.",
+    "en": "Cannot locate object surface initialization."
+  },
+  "팔각기둥": {
+    "ko": "팔각기둥",
+    "en": "Octagonal prism"
+  },
+  "납작한 사과": {
+    "ko": "납작한 사과",
+    "en": "Flat-bottom apple"
+  },
+  "원뿔대": {
+    "ko": "원뿔대",
+    "en": "Frustum"
+  },
+  "세운 원통": {
+    "ko": "세운 원통",
+    "en": "Upright cylinder"
+  },
+  "계산 불가": {
+    "ko": "계산 불가",
+    "en": "Unavailable"
+  },
+  "현재 명령은 모델의 이동 범위 안에 있습니다.": {
+    "ko": "현재 명령은 모델의 이동 범위 안에 있습니다.",
+    "en": "The requested motion is within the modeled travel range."
+  },
+  "요청 이동량이 모델의 슬라이더 이동 범위를 벗어나 끝값으로 제한됩니다.": {
+    "ko": "요청 이동량이 모델의 슬라이더 이동 범위를 벗어나 끝값으로 제한됩니다.",
+    "en": "The requested slider travel exceeds the modeled stroke and is clamped at its endpoint."
+  },
+  "두 슬라이더의 위치 차이가 허용 범위를 넘습니다. roll을 줄여 두 구동부가 함께 도달할 수 있는 자세로 제한합니다.": {
+    "ko": "두 슬라이더의 위치 차이가 허용 범위를 넘습니다. roll을 줄여 두 구동부가 함께 도달할 수 있는 자세로 제한합니다.",
+    "en": "The slider position difference exceeds its allowed envelope. Roll is reduced to a pose both actuators can reach."
+  },
+  "이 명령은 기구학 계산의 유효 영역을 벗어납니다. 유효한 관절 자세로 먼저 제한합니다.": {
+    "ko": "이 명령은 기구학 계산의 유효 영역을 벗어납니다. 유효한 관절 자세로 먼저 제한합니다.",
+    "en": "The command lies outside the valid kinematic domain and is first constrained to a valid joint pose."
+  },
+  "LIMIT · 도달 자세로 제한": {
+    "ko": "LIMIT · 도달 자세로 제한",
+    "en": "LIMIT · Constrained to a reachable pose"
+  },
+  "이동 범위 안": {
+    "ko": "이동 범위 안",
+    "en": "Within travel range"
+  },
+  "입력 R/P": {
+    "ko": "입력 R/P",
+    "en": "Command R/P"
+  },
+  "실제 R/P": {
+    "ko": "실제 R/P",
+    "en": "Reached R/P"
+  },
+  "높이": {
+    "ko": "높이",
+    "en": "Height"
+  },
+  "지지력": {
+    "ko": "지지력",
+    "en": "Support force"
+  },
+  "AIDIN 손과 동기화한 두 슬라이더·연결봉 확대 모델": {
+    "ko": "AIDIN 손과 동기화한 두 슬라이더·연결봉 확대 모델",
+    "en": "Twin-slider and connecting-rod model synchronized with the AIDIN hand"
+  },
+  "jointDescription": {
+    "en": "The {finger} smoothly traces each joint boundary. Other fingers stay open. Lines show simulated fingertip trajectories.",
+    "ko": "{finger}만 각 조건의 관절 범위 경계를 부드럽게 순회합니다. 다른 손가락은 펼친 자세로 유지합니다. 선은 계산된 실제 손끝 궤적입니다."
+  },
+  "canvasDescription": {
+    "en": "{id}: MuJoCo recording with original meshes",
+    "ko": "{id}: 원본 메시로 표시한 MuJoCo 기록"
+  },
+  "modelError": {
+    "en": "Model loading error: {message}",
+    "ko": "모델 로딩 오류: {message}"
+  },
+  "fallTime": {
+    "en": "Fallen at {time} s",
+    "ko": "낙하 {time} s"
+  },
+  "padResult": {
+    "en": "{angle}° result",
+    "ko": "{angle}° 결과"
+  },
+  "padResultNote": {
+    "en": "Full 6-second physics record · All conditions below",
+    "ko": "전체 6초 물리 기록 기준 · 아래에서 모든 조건 확인"
+  },
+  "rolloutTitle": {
+    "en": "{name} · epoch {epoch} · env{env} simulation recording",
+    "ko": "{name} · epoch {epoch} · env{env} 시뮬레이션 기록"
+  },
+  "rolloutError": {
+    "en": "Recording loading error: {message}",
+    "ko": "기록 로딩 오류: {message}"
+  },
+  "mechanismError": {
+    "en": "Mechanism loading error: {message}",
+    "ko": "기구 로딩 오류: {message}"
+  },
+  "mechanismHTTP": {
+    "en": "Mechanism data HTTP {status}",
+    "ko": "기구 데이터 HTTP {status}"
+  },
+  "requestDistance": {
+    "en": "Requested {value} mm",
+    "ko": "요청 {value} mm"
+  },
+  "mechanismAngles": {
+    "en": "Requested roll {rr}° / pitch {rp}° → Reached roll {ar}° / pitch {ap}°",
+    "ko": "요청 roll {rr}° / pitch {rp}° → 도달 roll {ar}° / pitch {ap}°"
+  },
+  "mechanismDelta": {
+    "en": "Slider difference d₁−d₂: {delta} mm · Allowed {lo} to {hi} mm",
+    "ko": "두 슬라이더 차이 d₁−d₂: {delta} mm · 모델 허용 {lo} ~ {hi} mm"
+  },
+  "mechanismSweep": {
+    "en": "Roll sweep at pitch {pitch}°",
+    "ko": "pitch {pitch}°에서 roll 왕복"
+  },
+  "viewerPlay": {
+    "en": "Play",
+    "ko": "재생"
+  },
+  "viewerPause": {
+    "en": "Pause",
+    "ko": "일시정지"
+  },
+  "viewerLoopOn": {
+    "en": "Loop: On",
+    "ko": "반복: 켜짐"
+  },
+  "viewerLoopOff": {
+    "en": "Loop: Off",
+    "ko": "반복: 꺼짐"
+  },
+  "viewerReset": {
+    "en": "Reset",
+    "ko": "처음으로"
+  },
+  "viewerFrame": {
+    "en": "Frame",
+    "ko": "프레임"
+  },
+  "viewerTimeline": {
+    "en": "Rollout time",
+    "ko": "학습 결과 재생 시간"
+  },
+  "viewerTitle": {
+    "en": "Saved policy rollout",
+    "ko": "저장된 정책 실행 기록"
+  },
+  "viewerPrevious": {
+    "en": "← 1 step",
+    "ko": "← 1 스텝"
+  },
+  "viewerNext": {
+    "en": "1 step →",
+    "ko": "1 스텝 →"
+  },
+  "navLearning": {
+    "en": "Learning setup",
+    "ko": "학습 구성"
+  },
+  "navResults": {
+    "en": "Policy rollouts",
+    "ko": "정책 실행"
+  },
+  "navModel": {
+    "en": "Hand model",
+    "ko": "핸드 모델"
+  },
+  "heroTitle": {
+    "en": "Scooping Grasping with Robotic Hand",
+    "ko": "로봇 손을 이용한 스쿠핑 파지"
+  },
+  "heroSubtitle": {
+    "en": "(Reinforcement Learning)",
+    "ko": "(강화학습)"
+  },
+  "heroDescription": {
+    "en": "Learning grasping and lifting through interaction in simulation. Explore the policy rollouts and the hand models that support transfer to a real AIDIN robotic hand.",
+    "ko": "시뮬레이션에서 환경과 상호작용하며 파지와 들어 올리기를 학습합니다. 정책 실행 결과와 실제 AIDIN 핸드로의 전이를 위한 모델 구성을 살펴봅니다."
+  },
+  "heroAction": {
+    "en": "Explore policy rollouts ↓",
+    "ko": "정책 실행 결과 보기 ↓"
+  },
+  "heroModel": {
+    "en": "Explore the hand model ↗",
+    "ko": "핸드 모델 살펴보기 ↗"
+  },
+  "simulationLabel": {
+    "en": "RECORDED SIMULATION",
+    "ko": "시뮬레이션 실행 기록"
+  },
+  "heroCaption": {
+    "en": "AIDIN × M0609 · Policy evaluation",
+    "ko": "AIDIN × M0609 · 정책 평가"
+  },
+  "heroSample": {
+    "en": "Octagonal prism / env4",
+    "ko": "팔각기둥 / env4"
+  },
+  "observations": {
+    "en": "observations",
+    "ko": "관측 차원"
+  },
+  "actions": {
+    "en": "actions · 6 arm + 15 hand",
+    "ko": "동작 차원 · 팔 6 + 손 15"
+  },
+  "families": {
+    "en": "object families",
+    "ko": "물체 종류"
+  },
+  "recordings": {
+    "en": "saved simulation rollouts",
+    "ko": "시뮬레이션 실행 기록"
+  },
+  "modelTitle": {
+    "en": "The hand behind the policy.",
+    "ko": "정책을 뒷받침하는 핸드 모델."
+  },
+  "modelIntro": {
+    "en": "Explore joint reachability, the slider mechanism, and contact pads through synchronized model studies. These recordings explain the model used around the learning system.",
+    "ko": "관절 도달 범위, 슬라이더 구동 기구, 접촉 패드를 동기화된 모델 실험으로 살펴봅니다. 학습 시스템을 구성하는 핸드 모델의 특성을 설명합니다."
+  },
+  "jointLink": {
+    "en": "Joint workspace",
+    "ko": "관절 작업 영역"
+  },
+  "mechanismLink": {
+    "en": "Slider mechanism",
+    "ko": "슬라이더 구동 기구"
+  },
+  "padsLink": {
+    "en": "Contact pads",
+    "ko": "접촉 패드"
+  },
+  "abstractTitle": {
+    "en": "Abstract",
+    "ko": "연구 개요"
+  },
+  "rlAffiliation": {
+    "en": "Sungkyunkwan University",
+    "ko": "성균관대학교"
+  },
+  "rolloutLink": {
+    "en": "Policy Rollouts",
+    "ko": "정책 실행 결과"
+  },
+  "modelOverviewLink": {
+    "en": "Hand Model",
+    "ko": "핸드 모델"
+  },
+  "previewCaption": {
+    "en": "Simulation preview",
+    "ko": "시뮬레이션 미리보기"
+  },
+  "footerTemplate": {
+    "en": "Website template borrowed from",
+    "ko": "웹사이트 템플릿:"
+  },
+  "footerData": {
+    "en": "Data verification",
+    "ko": "데이터 검증"
+  },
+  "footerBasis": {
+    "en": "Learning framework based on",
+    "ko": "학습 프레임워크 기반:"
+  },
+  "modelChapter": {
+    "en": "HAND MODEL & CONTACT",
+    "ko": "핸드 모델과 접촉"
+  }
+}

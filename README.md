@@ -28,3 +28,30 @@ The media history was compacted to retain only the current web videos. Previous 
 Website template borrowed from [NeRFies](https://github.com/nerfies/nerfies.github.io).
 
 Korean typography uses self-hosted Pretendard Variable 1.3.9. English retains the original Google Sans and Noto Sans styles. The font license is included in static/fonts/Pretendard-LICENSE.txt.
+
+## IL / RL pages
+
+The existing root page presents IL / Diffusion Policy. `rl/index.html` presents
+reinforcement learning with an AIDIN hand, adapted from
+`simtoolreal/project-page/`. Both pages share the research navigation.
+The RL page includes a collapsed learning-pipeline overview, 24 recorded simulation
+rollouts, and a distinct hand-model chapter with the original interactive studies.
+Both approaches use the NeRFies publication theme with shared Bulma, English
+fonts, Korean Pretendard, and research navigation. The RL page keeps its Three.js
+viewers and controls; `rl/viewer-theme.css` styles the embedded rollout controls.
+
+[Open the RL page](https://r-ush.github.io/scooping_robotic_hand/rl/).
+
+For a local preview, run `python ~/webpages/preview.py`, then open
+<http://localhost:3000/scooping_robotic_hand/rl/>. The same server serves the main
+homepage at `/` and the IL page at `/scooping_robotic_hand/`.
+
+The RL page is a static subpage in this repository. `rl/assets/` contains the
+referenced URDF and meshes; `rl/rollouts/` contains all 24 saved simulation
+recordings and their gallery. Relative URLs work on GitHub Pages without the
+simulation checkout or a localhost asset server. Three.js modules load from the
+existing external CDN. `rl/data/public-assets.json` records the packaged files
+and source hashes. Original simulation files remain unchanged.
+
+To preview this repository alone, run `python3 -m http.server 3001` from the
+repository root and open <http://localhost:3001/rl/>.

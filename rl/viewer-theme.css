@@ -1,0 +1,25 @@
+/* This stylesheet belongs to the embedded rollout document, not the outer page. */
+:root {
+  color-scheme: light;
+  --panel: rgba(255,255,255,.96);
+  --panel-border: #d9d9d9;
+  --text: #363636;
+  --muted: #777;
+  --accent: #3273dc;
+}
+body { font-family: 'Noto Sans', Arial, sans-serif; }
+#hud { border-radius: 8px; padding: 12px 14px; }
+#titlebar strong { font-size: 12px; letter-spacing: 0; }
+#titlebar > div > span { display: none; }
+#titlebar span { font-size: 11px; }
+button { background: #fff; border: 1px solid #dbdbdb; font-size: 12px; padding: 8px 12px; }
+button:hover { background: #f5f5f5; border-color: #b5b5b5; }
+button:focus-visible, input:focus-visible { outline: 2px solid #3273dc; outline-offset: 3px; }
+input[type="range"] { background: #dcdcdc; }
+#status { font-size: 11px; min-width: 72px; }
+@media(max-width:600px) {
+  #hud { left: 10px; right: 10px; bottom: 10px; padding: 10px; }
+  #controls { display: flex; flex-wrap: wrap; gap: 8px; }
+  #controls input[type="range"] { flex: 1; min-width: 120px; }
+  #status { margin-left: auto; }
+}
