@@ -3,9 +3,8 @@
  */
 (() => {
   'use strict';
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  // UI transitions intentionally keep the same timing across OS animation settings.
   const duration = (element, name, fallback) => {
-    if (reduced.matches) return 0;
     const value = getComputedStyle(element).getPropertyValue(name).trim();
     const number = parseFloat(value);
     return Number.isFinite(number) ? number * (value.endsWith('ms') ? 1 : 1000) : fallback;
@@ -57,9 +56,6 @@
     details.addEventListener('toggle', () => {
       if (!closing && details.open !== (details.dataset.open === 'true')) setOpen(details.open);
     });
-    reduced.addEventListener('change', () => {
-      if (reduced.matches && closing) { clearTimeout(timer); details.open = false; closing = false; }
-    });
   }
 
   function slidingTabs(bar) {
@@ -100,10 +96,9 @@
     panel.style.transition = 'none';
     void panel.offsetHeight;
     panel.style.transition = '';
-    if (reduced.matches) panel.dataset.open = 'true';
-    else panelFrames.set(panel, requestAnimationFrame(() => { panel.dataset.open = 'true'; }));
+    panelFrames.set(panel, requestAnimationFrame(() => { panel.dataset.open = 'true'; }));
   }
-  window.PageMotion = {duration, reduced, accordion, slidingTabs, reveal};
+  window.PageMotion = {duration, accordion, slidingTabs, reveal};
 })();
 
 document.addEventListener('DOMContentLoaded', () => {

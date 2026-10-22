@@ -391,6 +391,14 @@ const families = [ {name: '팔각기둥', envs: [4, 6]}, {name: '납작한 사�
 let rolloutRequest = 0;
 let rolloutFetch;
 
+function replaceRolloutAnchor(html, anchor, replacement) {
+  const position = html.indexOf(anchor);
+  if (position < 0 || html.indexOf(anchor, position + anchor.length) >= 0) {
+    throw new Error('The recording viewer could not be initialized.');
+  }
+  return html.replace(anchor, replacement);
+}
+
 const rolloutStage = $('rollout-stage');
 const rolloutSkeleton = rolloutStage.querySelector('.t-skel-skeleton');
 let rolloutWatchdog;
@@ -480,7 +488,7 @@ async function updateRollout() {
   try {
     const response = await fetch(url, {signal: rolloutFetch.signal});
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    let html = await response.text();
+    let html = (await response.text()).replace(/\r\n?/g, '\n');
     if (request !== rolloutRequest) return;
     const anchor = 'controls.enableDamping = true;';
     if (!html.includes(anchor)) throw new Error(t("기록의 카메라 초기화 위치를 찾지 못했습니다."));
@@ -557,14 +565,30 @@ async function updateRollout() {
       });
       window.projectPagePlayback = projectPlayback;
       initScene();`);
-    // Notify only when the selected request has actual model geometry and a rendered frame.
-    html = html.replace('          applyFrame(0);', `
+    // URDF parsing finishes before its asynchronous mesh loads. Wait for those
+    // loads, then reveal the first rendered frame directly from initialization.
+    // applyFrame(0) also occurs at loop boundaries; a bare text match delayed
+    // the reveal until the entire ten-second recording had played once.
+    html = replaceRolloutAnchor(html, '      async function initScene() {', `
+      const projectMeshLoads = [];
+      async function initScene() {`);
+    html = replaceRolloutAnchor(html,
+      '        loader.loadMeshCb = (path, loadingManager, onComplete) => {', `
+        loader.loadMeshCb = (path, loadingManager, onComplete) => {
+          let completeProjectMesh;
+          projectMeshLoads.push(new Promise((resolve, reject) => {
+            completeProjectMesh = error => error ? reject(error) : resolve();
+          }));`);
+    html = replaceRolloutAnchor(html, '            onComplete(object, error);', `
+            onComplete(object, error);
+            completeProjectMesh(error);`);
+    html = replaceRolloutAnchor(html, '          applyFrame(0);\n          setLooping(true);', `
+          await Promise.all(projectMeshLoads);
           applyFrame(0);
-          requestAnimationFrame(() => {
-            renderer.render(scene, camera);
-            parent.postMessage({type:'rollout-motion-ready', request:${request}}, ${JSON.stringify(location.origin)});
-          });`)
-      .replace('          showError(error instanceof Error ? error.message : String(error));', `
+          setLooping(true);
+          renderer.render(scene, camera);
+          parent.postMessage({type:'rollout-motion-ready', request:${request}}, ${JSON.stringify(location.origin)});`);
+    html = html.replace('          showError(error instanceof Error ? error.message : String(error));', `
           showError(error instanceof Error ? error.message : String(error));
           parent.postMessage({type:'rollout-motion-error', request:${request}, message:String(error)}, ${JSON.stringify(location.origin)});`);
     $('rollout-frame').contentWindow?.projectPagePlayback?.dispose();

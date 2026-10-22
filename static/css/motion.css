@@ -54,12 +54,6 @@
   transform: scaleY(-1);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .t-acc-panel, .t-acc-panel-inner, .t-acc-chevron {
-    transition: none !important;
-  }
-}
-
 /* transitions.dev / 16-tabs-sliding.md */
 :root {
   --tabs-dur: 250ms;
@@ -118,10 +112,6 @@
   will-change: transform, width;
   z-index: 0;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .t-tabs-pill, .t-tab { transition: none !important; }
 }
 
 /* transitions.dev / 14-skeleton-reveal.md */
@@ -186,13 +176,6 @@
 @keyframes t-skel-pulse {
   0%, 100% { opacity: 1; }
   50%      { opacity: var(--pulse-min); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .t-skel-skeleton, .t-skel-content {
-    transition: none !important;
-  }
-  .t-skel-skeleton.is-pulsing > * { animation: none !important; }
 }
 
 /* Integration with the existing page layout. */
