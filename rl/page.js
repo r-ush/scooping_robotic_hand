@@ -390,6 +390,56 @@ $('rollout-frame').addEventListener('load', () => {
 const families = [ {name: '팔각기둥', envs: [4, 6]}, {name: '납작한 사과', envs: [1, 3]}, {name: '원뿔대', envs: [2, 5]}, {name: '세운 원통', envs: [0, 7]} ];
 let rolloutRequest = 0;
 let rolloutFetch;
+
+const rolloutStage = $('rollout-stage');
+const rolloutSkeleton = rolloutStage.querySelector('.t-skel-skeleton');
+let rolloutWatchdog;
+function beginRolloutLoading() {
+  clearTimeout(rolloutWatchdog);
+  rolloutStage.classList.add('is-resetting');
+  rolloutStage.classList.remove('is-revealed');
+  rolloutStage.dataset.state = 'loading';
+  rolloutStage.setAttribute('aria-busy', 'true');
+  rolloutSkeleton.classList.remove('is-pulsing');
+  rolloutSkeleton.inert = false;
+  rolloutSkeleton.setAttribute('aria-hidden', 'false');
+  $('rollout-frame').inert = true;
+  $('rollout-frame').setAttribute('aria-hidden', 'true');
+  $('rollout-retry').hidden = true;
+  $('rollout-loading-label').textContent = t("선택한 기록을 불러오는 중…");
+  void rolloutStage.offsetWidth;
+  rolloutStage.classList.remove('is-resetting');
+  rolloutSkeleton.classList.add('is-pulsing');
+  rolloutWatchdog = setTimeout(() => rolloutLoadingError(document.documentElement.lang === 'ko'
+    ? '모델을 불러오는 데 시간이 걸리고 있습니다. 다시 시도할 수 있습니다.'
+    : 'The model is taking longer to load. You can retry.'), 20000);
+}
+function rolloutLoadingError(message) {
+  clearTimeout(rolloutWatchdog);
+  rolloutStage.dataset.state = 'error';
+  rolloutStage.setAttribute('aria-busy', 'false');
+  rolloutSkeleton.classList.remove('is-pulsing');
+  $('rollout-loading-label').textContent = message;
+  $('rollout-retry').textContent = document.documentElement.lang === 'ko' ? '다시 시도' : 'Retry';
+  $('rollout-retry').hidden = false;
+}
+window.addEventListener('message', event => {
+  if (event.source !== $('rollout-frame').contentWindow || event.origin !== location.origin ||
+      event.data?.request !== rolloutRequest) return;
+  if (event.data.type === 'rollout-motion-error') { rolloutLoadingError(event.data.message); return; }
+  if (event.data.type !== 'rollout-motion-ready') return;
+  clearTimeout(rolloutWatchdog);
+  rolloutStage.dataset.state = 'ready';
+  rolloutStage.setAttribute('aria-busy', 'false');
+  rolloutSkeleton.classList.remove('is-pulsing');
+  rolloutSkeleton.inert = true;
+  rolloutSkeleton.setAttribute('aria-hidden', 'true');
+  $('rollout-frame').inert = false;
+  $('rollout-frame').removeAttribute('aria-hidden');
+  rolloutStage.classList.add('is-revealed');
+});
+$('rollout-retry').addEventListener('click', updateRollout);
+
 function refreshRolloutLabels() {
   const index = Number($('family-select').value), family = families[index];
   document.querySelectorAll('[data-family]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.family) === index)));
@@ -414,6 +464,7 @@ document.querySelectorAll('[data-family]').forEach(button => button.onclick = ()
 });
 async function updateRollout() {
   const request = ++rolloutRequest;
+  beginRolloutLoading();
   rolloutFetch?.abort();
   rolloutFetch = new AbortController();
   refreshRolloutLabels();
@@ -506,11 +557,22 @@ async function updateRollout() {
       });
       window.projectPagePlayback = projectPlayback;
       initScene();`);
+    // Notify only when the selected request has actual model geometry and a rendered frame.
+    html = html.replace('          applyFrame(0);', `
+          applyFrame(0);
+          requestAnimationFrame(() => {
+            renderer.render(scene, camera);
+            parent.postMessage({type:'rollout-motion-ready', request:${request}}, ${JSON.stringify(location.origin)});
+          });`)
+      .replace('          showError(error instanceof Error ? error.message : String(error));', `
+          showError(error instanceof Error ? error.message : String(error));
+          parent.postMessage({type:'rollout-motion-error', request:${request}, message:String(error)}, ${JSON.stringify(location.origin)});`);
     $('rollout-frame').contentWindow?.projectPagePlayback?.dispose();
     $('rollout-frame').srcdoc = html;
   } catch (error) {
     if (request !== rolloutRequest) return;
     $('rollout-telemetry').textContent = t('rolloutError',{message:error.message});
+    rolloutLoadingError(t('rolloutError',{message:error.message}));
     console.error(error);
   }
 }

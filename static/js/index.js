@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return state.element.id === 'comparison1-with' || state.element.id === 'comparison1-without';
   });
   function shouldPlay(state) {
-    if (document.hidden || state.element.closest('details:not([open])')) return false;
+    if (document.hidden || state.element.closest('details:not([open]), details[data-open="false"]')) return false;
     const rect = state.element.getBoundingClientRect();
     if (!rect.width || !rect.height || rect.right <= 0 || rect.left >= window.innerWidth) return false;
     const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
